@@ -1,0 +1,107 @@
+@startuml
+
+skinparam svgDimensionStyle false
+
+Title "Alternative Proposed Framework (as a Data Model)"
+
+class "Organization" as org {
+    **org_id: id**
+    name: string
+    country: string
+}
+
+abstract class "Dig. Label Element" as dle {
+    **dle_id: id**
+    title: string
+    description: string
+}
+
+Note top of dle
+as ontology
+end Note
+
+
+class "Object" as obj
+class "Element" as elem
+class "Data Type" as dt
+class "Formatting" as format
+class "Procedure" as proc
+class "Code" as code
+
+dle <|-- obj
+dle <|-- elem
+dle <|-- dt
+dle <|-- format
+dle <|-- proc
+dle <|-- code
+
+class "Source" as src {
+    **src_id: id**
+    title: string
+    description: string
+    reference: string
+    source_type: SRC_TYPE
+    source_status: SRC_STATUS
+    biblio_verfication_status: VER_STATUS
+    technical_cmte: string
+    release_date: date
+    jurisdiction: code
+    authority_level: code
+    analysis_priority: code
+    access_copyright: code
+    notes: string
+}
+
+class "Section" as sect {
+    **src_id: id**
+    **section**
+    **paragraph**
+    statement
+}
+
+Note top of sect
+with 3 columns:
+- section (recommended)
+- page (optional)
+- text (mandatory)
+end Note
+
+class "Evidence" as evidence {
+    **src_id: id**
+    **section**
+    **paragraph**
+    conformanceVerb
+    relationship
+    cardinality
+}
+
+Note top of evidence
+with 5 columns:
+- source
+- conformance verb (or parenthesis / boolean operation)
+- relationship
+- cardinality
+- target
+end Note
+
+src *-right- "1..*" sect : details of \nstandard >
+sect *-right- "0..*" evidence : documentation\n >
+
+evidence "0..*" -right- "1" dle :    source  \n >
+evidence "0..*" -right- "1" dle :    target \n >
+
+evidence .. evidence : grouping   \n\n\n\n\n\n\n
+
+dle .. dle : more specialized \n(=parent of) >
+
+src -- org : issuing body >
+
+class "Glossary" as glossary {
+    **term_id: id**
+    title: string
+    definition: string
+}
+
+glossary -- "1..*" src : comes from >
+
+@enduml

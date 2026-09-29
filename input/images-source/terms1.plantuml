@@ -1,0 +1,17 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+Title "Legal vs. Standard"
+
+class "Legal" as l1
+class "Realization" as l2
+
+l1 <|-- l2 : compliant
+
+class "Standard" as s1
+class "Realization" as s2
+
+s1 <|-- s2 : conformant
+
+@enduml

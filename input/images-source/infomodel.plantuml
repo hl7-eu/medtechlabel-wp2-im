@@ -1,0 +1,191 @@
+@startuml
+
+skinparam svgDimensionStyle false
+
+title Information Model
+
+
+cloud "Accompanying Information" {
+
+    class "Manufacturer" as manu {
+        identifier
+        name
+        address
+        contactInfo
+    }
+
+    class "(General) \nProduct \n(Information)" as product {
+        name
+        description
+    }
+
+    class "Catalog" as cat {
+        catalogNumber
+        catalogData
+    }
+
+    product "0..*" .right. "0..*" cat : listed in >
+
+    abstract class "Documentation" as documentation {
+        language
+    }
+
+
+    class "Instruction \nfor Use (IFU)" as ifu {
+        text
+    }
+
+    class "electronic \nInstruction \nfor Use (eIFU)" as eifu {
+        text
+    }
+
+    class "Manual" as manual {
+        text
+    }
+
+    class "Technical\nDescription" as td {
+        text
+    }
+
+    product o-- documentation : has >
+    documentation o-- web
+    documentation "1" o-- "0..1" ifu : > has
+    documentation "1" o-- "0..1" eifu : > has
+    documentation "1" o-- "0..1" manual : > has
+    documentation "1" o-- "0..1" td : > has
+
+    manual -- "0..*" icon : uses >
+
+    class "Icon" as icon {
+        symbol
+        description
+    }
+
+    ifu -- "0..*" icon : > has
+    eifu -- "0..*" icon : > has
+
+    class "Website" as web {
+        url
+        content    
+    }
+
+    manu -- web : > has
+    product -- web
+    web -- "0..*" web : > points to
+
+    class "QR Code" as qr {
+        content
+    }
+
+    manu "1" -right- "0..*" product : > produces
+
+
+
+    qr -- "0..1" web : > points to
+
+}
+
+class "Label" as label {
+    description
+}
+
+documentation "1" -- "1" label : > has
+
+label -- qr : > has
+label -- "0..*" icon : > has
+
+class "Product" as prod {
+    identifier[]
+    productionDate
+}
+
+class "Lot" as lot {
+    lotNumber
+    lotData
+}
+
+class "Property" as prop {
+    identifier
+    description
+    value
+}
+
+cloud "physical Objects" {
+    abstract class "physical Object" as physObj {
+        physicalSize
+    }
+
+    abstract class "Device" as adev {
+        serialNumber
+        title
+        expiryDate: date
+
+    }
+
+    class "(Specific) \nDevice" as device {
+        usageCount
+    }
+
+    adev <|-- device
+
+    class "Property Value" as propval {
+        value
+    }
+
+    device "0..*" .left. "1" lot : produced in >
+    device "0..*" .right. "1" prop : has property >
+    (device,prop) -- propval
+
+    product .right.. prod
+
+    class "Package" as pkg {
+        packagingSize
+    }
+
+    class "Container" as container {
+        packagingSize
+    }
+
+    class "Accessory" as acc {
+
+    }
+
+    class "Spare Part" as spare {
+
+    }
+
+    class "detachable Component" as comp {
+
+    }
+
+    class "Battery" as batt {
+
+    }
+
+    adev <|-- acc
+    adev *-- comp
+    comp -up- spare : replaces <
+
+    acc .. device : can support >
+
+    physObj <|-- prod
+    physObj <|-- device
+    physObj <|-- acc
+    physObj <|-- spare
+    physObj <|-- pkg
+    physObj <|-- container
+
+    pkg o-- "0..*" container : > contains (optionally)
+    container o-- device : > contains
+    container o-- acc : > contains
+    pkg o-- "0..*" device : contains
+    pkg o-- "0..*" acc : contains
+    pkg -- label : > has
+
+}
+
+
+
+
+
+@enduml

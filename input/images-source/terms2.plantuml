@@ -1,0 +1,14 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+Title "Document vs. Process"
+
+class "Standard" as s1
+class "Profile \n(as documentation)" as s2
+class "Implementation \n(according to profile)" as s3
+
+s1 <|-- s2 : conformant
+s2 <|-- s3 : compliant
+
+@enduml

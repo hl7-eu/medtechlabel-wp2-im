@@ -1,0 +1,34 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+title Abstract Model
+
+class "Property" as prop
+
+class "Object" as obj
+
+class "Data Element" as de
+
+obj "1" *-- "1..*" de
+obj *-- "0..*" prop
+
+class "Data Type" as dt
+class "Format" as format
+
+de -- dt : has >
+de -- format : uses >
+
+class "Codesystem" as cs
+
+class "Code" as code
+
+cs *-- "0..*" code
+de -- cs : uses >
+
+class "Procedure" as proc
+
+proc -left- obj : perform on >
+
+
+@enduml

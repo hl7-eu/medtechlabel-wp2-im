@@ -1,0 +1,36 @@
+@startuml
+
+skinparam svgDimensionStyle false
+
+Title "Notation"
+
+abstract class "Abstract Class" as abs {
+    generalAttribute
+}
+class "Class 1" as c1 {
+    specialAttributeForClass1
+}
+class "Class 2" as c2 {
+    specialAttributeForClass2
+}
+ 
+class "related Class" as rel
+
+class "composited\nClass" as comp1
+class "aggregated\nClass" as comp2
+
+class "related to relationship" as relcls {
+    attributes for this specific relationship
+}
+
+abs <|-- c1
+abs <|-- c2
+
+abs "a..b" -right- "m..n" rel : < to abstract
+
+rel *-- comp1
+rel o-- comp2
+
+(abs,rel) .. relcls
+
+@enduml

@@ -1,0 +1,82 @@
+@startuml
+
+skinparam svgDimensionStyle false
+
+Title "Framework (as a Data Model)"
+
+class "Organization" as org {
+    **org_id: id**
+    name: string
+    country: string
+}
+
+class "Dig. Label Element" as dle {
+    **dle_id: id**
+    title: string
+    description: string
+    category: code
+    information_type: code
+    data_type: code
+    cardinality: code
+    human_readability_needed: boolean
+    machine_readability_needed: boolean
+    intended_user: string
+    information_owner: code
+    authorative_source: code
+    lifecycle: code
+    notes: string
+}
+
+class "Requirement" as req {
+    **req_id: id**
+    title: string
+    description: string
+    provision_type: code
+    information_environment[]: code
+    category: code
+    notes: string
+    detailsOfRequirement
+}
+
+class "Source" as src {
+    **src_id: id**
+    title: string
+    description: string
+    reference: string
+    source_type: SRC_TYPE
+    source_status: SRC_STATUS
+    biblio_verfication_status: VER_STATUS
+    technical_cmte: string
+    release_date: date
+    jurisdiction: code
+    authority_level: code
+    analysis_priority: code
+    access_copyright: code
+    notes: string
+}
+
+class "Evidence" as evidence {
+    **req_id: id**
+    **src_id: id**
+    **reference/section: string**
+    originalStatement: string
+}
+
+src "1..*" -right- "1..*" req : combined with \nby evidence
+req "1..*" -right- "1" dle : specifies >
+
+(src,req) .. evidence
+
+dle .. dle : more specialized \n(=parent of) >
+
+src -- org : issuing body >
+
+class "Glossary" as glossary {
+    **term_id: id**
+    title: string
+    definition: string
+}
+
+glossary -- "1..*" src : comes from >
+
+@enduml

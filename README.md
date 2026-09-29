@@ -1,2 +1,1 @@
-# medtechlabel-wp2-im
-MedTechLabel Project repository
+This is the MedTechLabel Project repository for the information model.

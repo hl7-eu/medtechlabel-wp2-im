@@ -1,0 +1,90 @@
+@startmindmap
+
+skinparam svgDimensionStyle false
+
+title MindMap with all details assembled so far
+
++ [[StructureDefinition-MindMap.html mindMap]]
+
+-- Risk Management
+---_ Hazard
+---_ Risk Mitigation
+-- Symbol
+---_ [[CodeSystem-SafetySigns7010.html icon]]
+---_ [[CodeSystem-SafetySign7010Category.html type]]
+---_ explanation
+---_ where used
+-- Documentation\n(=sum of documents)
+-- Document
+---_ electronic/printed instruction for use (IFU)
+---_ manual
+---_ technical description
+---_ website
+--[#bfb] Process
+---_ manufacturing
+---_ documenting
+---_ testing
+---_ labeling
+---_ handling
+----_ before/during/after use
+----_ prepare for use
+-----_ sterilize
+----_ prepare for storage
+----_ before use
+-----_ heating/cooling
+----_ use
+----_ reuse
+----_ dispose
+-----_ sterilize
+----_ storing
+--[#ffb] Codes
+---_ Country
+---_ Language
+---_ ....
+--[#ffb] Formats
+---_ Date/Time
+---_ Numbers
+
+
+++ Label
++++_ Producer/Manufacturer
+++++_ Identification
+++++_ Name
+++++_ Address
+++++_ Telecom
++++_ Product Identification
++++_ use of symbols
+++ Product Information
++++_ name + description
++++_ [[CodeSystem-DeviceClass.html class]]: I, II, III
++++_ [[CodeSystem-DeviceType.html type]]/family
++++_ property
+++++_ single use/reusable
+++++_ implantable
+++++_ disposable
+++++_ sterilizable
+++++_ sharp (edges)
+++++_ nano technology
++++_ production date
++++_ expiry date
++++_ Safety-related warnings or restrictions
+++ Package
++++_ amount of contained devices
+++ Container
++++_ (as part of package)
+++ Specific (produced) Device
++++_ Serial Number
++++_ Lot Number
++++_ Batch Number
++++_ detachable component
+++++_ ....
+++ Accessory
+++ Spare Part
+++ Information
++++_ on Website
++++_ on Package/Box
++++_ on Container (Blister)
++++_ on Device
+++ Comment
+
+@endmindmap

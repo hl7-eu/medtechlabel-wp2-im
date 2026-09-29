@@ -1,0 +1,38 @@
+@startuml
+
+skinparam svgDimensionStyle false
+
+Title "Process"
+
+actor Contributor as c
+
+database "Repository: \nDB Input" as r1
+
+database "Requirements \nDatabase" as db
+
+database "Repository: \nInfo Model" as r2
+
+database "Information Model \n(Website)" as im
+
+r1 -> c : download latest file
+activate c
+c -> c: edit (contribute)
+c -> r1 : submit changes
+deactivate c
+
+activate  r1
+r1 -> db : identify and update \nrequirement identifier
+activate db
+db -> r1
+deactivate db
+
+r1 -> db : load/update to database
+deactivate  r1
+
+
+
+db -> r2 : extract data for \ninformation model
+
+r2 -> im : generate \ninformation model \n(details as codesystems)
+
+@enduml

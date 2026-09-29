@@ -1,0 +1,39 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+Title "WP Cooperation"
+
+collections "Legislation" as l
+collections "[[index.html Standards]]" as s
+
+actor "WP1" as wp1
+collections "Requirements" as r
+participant "Artefacts" as s2
+actor "WP2" as wp2
+collections "[[informationmodel.html Information \nModel]]" as s3
+actor "WP3" as wp3
+actor "WP4" as wp4
+participant "[[glossary.html Glossary \nof Terms]]" as g
+
+l -> wp1
+activate wp1
+s -> wp1
+
+wp1 -> r
+activate wp1
+wp1 -> g
+wp1 -> s2
+deactivate wp1
+s2 -> wp2
+activate wp2
+wp2 -> g
+wp2 -> s3
+deactivate wp2
+wp1 -> wp4
+wp3 -> g
+deactivate wp1
+wp4 -> g
+
+
+@enduml
