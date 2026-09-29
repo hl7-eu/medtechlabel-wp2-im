@@ -2,13 +2,13 @@
 
 'skinparam svgDimensionStyle false
 
-Title "Document vs. Process"
+Title "Document (Profile) vs. Process (Implementation)"
 
 class "Standard" as s1
-class "Profile \n(as documentation)" as s2
-class "Implementation \n(according to profile)" as s3
+class "Profile \n(from standard)" as s2
+class "Implementation \n(Software according to profile)" as s3
 
-s1 <|-- s2 : conformant
-s2 <|-- s3 : compliant
+s1 <-- s2 : conformant
+s2 <-- s3 : compliant
 
 @enduml

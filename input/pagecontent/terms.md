@@ -6,10 +6,11 @@ table tr:nth-child(odd) {background: #FFF}
 </style>
 
 
-An important aspect is the understanding what conformance vs. compliance means.
-In the following two different ways of interpreting it are presented:
+An important aspect is the understanding what **conformance** vs. **compliance** means.
+Those two are a commonly misunderstood or misinterpreted.
+In the following two major different ways of interpreting them are presented:
 
-## legal vs. Standard
+## Legislation vs. Standard
 
 This perspective considers from where a requirement is derived:
 
@@ -31,6 +32,6 @@ Another way of looking at it is as follows:
 
 The derivation from a standard creates a more constraint document
 that represents a profile on the basis of this standard.
-This derivation is declared as conformance.
+This derivation is declared as conformant if the rules are followed.
 An implementation based on that derived specification is then
-taken as compliance, aka of behavior.
+taken as compliant, aka of behavior.

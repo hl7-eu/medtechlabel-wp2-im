@@ -2,16 +2,16 @@
 
 'skinparam svgDimensionStyle false
 
-Title "Legal vs. Standard"
+Title "Legislation vs. Standard"
 
-class "Legal" as l1
+class "Legislation" as l1
 class "Realization" as l2
 
-l1 <|-- l2 : compliant
+l1 <-- l2 : compliant
 
 class "Standard" as s1
 class "Realization" as s2
 
-s1 <|-- s2 : conformant
+s1 <-- s2 : conformant
 
 @enduml
