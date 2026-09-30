@@ -2,7 +2,9 @@ This "website" is created by running a script (_buidl.bat) that converts
 the different input files into this website.
 Therefor, a tool called **IG-publisher** is used.
 In the following it is described what is necessary as a precondition
-to run the scripts.
+to run the scripts locally.
+However, the content is available at [https://build.fhir.org/ig/hl7-eu/medtechlabel-wp2-im/](https://build.fhir.org/ig/hl7-eu/medtechlabel-wp2-im/).
+
 
 ### Necessary Software
 
@@ -24,6 +26,8 @@ To run the generation script the necessary software must be installed:
 > install Java SDK from official website
 > install node.js from official website: [https://nodejs.org/en](https://nodejs.org/en)
 
+Verify that both tools are installed correctly and working:
+
 ```
 node -v
 npm -v
@@ -31,11 +35,20 @@ npm -v
 
 > install Ruby from website: [https://rubyinstaller.org/](https://rubyinstaller.org/)
 
+Install SUSHI to convert FSH files to FHIR:
+
 ```
 npm install -g fsh-sushi
 ```
 
-SUSHI can be used to create a new empty implementation guide:
+Verify that SUSHI is available:
+
+```
+sushi -v
+```
+
+SUSHI can then be used to create a new empty implementation guide
+in the current directory (on command line level):
 
 ```
 sushi init .

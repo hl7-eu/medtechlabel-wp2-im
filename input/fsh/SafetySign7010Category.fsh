@@ -1,7 +1,7 @@
 CodeSystem: SafetySign7010CategoryCS
 Id: SafetySign7010Category
 Title: "ISO 7010: Safety categories"
-Description: "ISO 7010 - Safety categories"
+Description: "**ISO 7010** - Safety categories"
 
 * ^version = "0.1.0"
 * ^status = #active

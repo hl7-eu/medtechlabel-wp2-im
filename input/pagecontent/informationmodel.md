@@ -5,8 +5,14 @@ table tr:nth-child(even) {background: #96d3ec}
 table tr:nth-child(odd) {background: #FFF}
 </style>
 
-The following information model aligns all details from the [mindmap](mindmap.html) 
-resp. [value set](ValueSet-DigitalLabelElement4Model.html) in form of an UML class diagram:
+The (following) information model shall align all details from 
+the [mindmap](mindmap.html) resp. [value set](ValueSet-DigitalLabelElement4Model.html) 
+in form of an UML class diagram.
+All identified objects and details artefacts (attributes) must be present somewhere:
+
+> This information model currently represents a draft for discussion!
+> Adjustments can be expected during the course of WP2.
+> Feedback is highly appreciated.
 
 <div width="500px">
 {% include infomodel.svg %}
@@ -16,9 +22,10 @@ resp. [value set](ValueSet-DigitalLabelElement4Model.html) in form of an UML cla
 
 The following information objects are not included into the information model:
 
-* organisations
+* individual organisations in specific roles
   * importer
   * distributor
+  * ..
 * person
   * subject (= patient)
   * user

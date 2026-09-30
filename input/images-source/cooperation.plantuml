@@ -8,17 +8,19 @@ collections "Legislation" as l
 collections "[[index.html Standards]]" as s
 
 actor "WP1" as wp1
-collections "Requirements" as r
+collections "WP1\nDeliverable: \nRequirements" as r
 participant "Artefacts" as s2
 actor "WP2" as wp2
-collections "[[informationmodel.html Information \nModel]]" as s3
+collections "WP2\nDeliverable: \n[[informationmodel.html Information \nModel]]" as s3
 actor "WP3" as wp3
 actor "WP4" as wp4
 participant "[[glossary.html Glossary \nof Terms]]" as g
+collections "Other \nDeliverables" as r2
 
 l -> wp1
 activate wp1
 s -> wp1
+s2 -> wp1
 
 wp1 -> r
 activate wp1
@@ -30,10 +32,21 @@ activate wp2
 wp2 -> g
 wp2 -> s3
 deactivate wp2
-wp1 -> wp4
+r -> wp3
+activate wp3
 wp3 -> g
+wp3 -> r2
+deactivate wp3
 deactivate wp1
+r -> wp4
+activate wp4
 wp4 -> g
+wp4 -> r2
+deactivate wp4
 
+legend
+WP x: activities in work package
+Artefacts: intermediary list of items needed to create to know for the information model
+end legend
 
 @enduml

@@ -4,6 +4,8 @@ table tr:nth-child(even) {background: #EEE}
 table tr:nth-child(odd) {background: #FFF}
 </style>
 
+> This content of this page is based on the information as of August 2026
+> and may need an update!
 
 This page is intended to analyse and document the underlying framework
 so that it can be stored in a database to fully align consistency:

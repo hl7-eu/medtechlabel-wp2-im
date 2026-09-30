@@ -26,6 +26,11 @@ The primary purpose is for now:
 	* [use](CodeSystem-Use.html)
 	* and some more
 
+## Disclaimer
+
+Although [FHIR](https://www.hl7.org/fhir) tools are used, 
+beside that the current content has no direct relation to/with FHIR.
+
 # What is a medical device?
 
 A medical device can be described in many ways:
@@ -47,16 +52,46 @@ for providing all the ncessary details for a modelling.
 
 # Next Steps
 
-* improve Analysis Sheet into traceable items
-* transfer data elements into [mindmap](mindmap.html)
-* update [logical model](StructureDefinition-MindMap.html) with details
-* update [information model](informationmodel.html)
-* create glossary of terms with references to standards
-* extract conditions
+* improve the Analysis (Excel) Sheet
+  * traceable items
+  * track occurence of conditions
+* analyse standards and verify analysis
+  * check whether new items occur, update analysis sheet if necessary
+  * improve glossary of terms with references to standards from where they are taken
+* transfer data elements into the [mindmap](mindmap.html)
+* update [logical model](StructureDefinition-MindMap.html) to document details
+* update the [information model](informationmodel.html) itself (status: draft)
+* provide a notation to specify conditions
+* extract detailed conditions
 * Pratav: provide symbols as files
-* analyse other standards (to be provided)
-  * EMDN
+* analyse other supplementary standards (to be provided)
+  * eg. EMDN
 * ...
+
+## Open Topics
+
+* How to use the detailed requirements to run an engine that validates the model?
+
+# Results of this Task
+
+The report from this task (WP2 T2.2) may use the following structure:
+
+* introduction
+  * scope
+  * input
+    * legislation
+    * standards
+* methodology
+* results
+  * input data
+  * taxonomy
+  * conditions
+  * information model
+  * profiling the model
+*  annexes
+  * codesystem with properties as FHIR resource
+  * glossary
+
 
 # Overview about Standards
 
@@ -64,31 +99,33 @@ Following some standards that may or may not be of relevance:
 
 | Standard | Title | Status | Comment |
 | --- | --- | --- | --- |
-| ISO 639 | Code for individual languages and language groups |
-| ISO 780 | Packaging — Distribution packaging — Graphical symbols for handling and storage of packages |
-| ISO 3166 | Country codes |
-| ISO 3864-1:2011 | ´Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs and safety markings |
-| ISO 7000 | Graphical Symbols for use on Equipment, e.g. 1641 |
-| ISO 7010:2019 | Graphical symbols — Safety colours and safety signs — Registered safety signs, e.g. M001, P001 |
-| ISO 8601-1 | Date and time — Representations for information interchange — Part 1: Basic rules´ |
-| ISO 9001:2015 | Quality Management Systems - Fundamentals and vocabulary |
-| ISO 13485 | Medical devices — Quality management systems — Requirements for regulatory purposes |
-| ISO 14617-2:2025 | Graphical symbols for diagrams - Part 2: Graphical symbols | 
-| ISO 14971 | Risk Management Process |
-| ISO 15223 | Medical devices — Symbols to be used with information to be supplied by the manufacturer |
+| ISO 639 | Code for individual languages and language groups | open |
+| ISO 780 | Packaging — Distribution packaging — Graphical symbols for handling and storage of packages | open |
+| ISO 3166 | Country codes | open |
+| ISO 3864-1:2011 | ´Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs and safety markings | open |
+| ISO 7000 | Graphical Symbols for use on Equipment, e.g. 1641 | open |
+| ISO 7010:2019 | Graphical symbols — Safety colours and safety signs — Registered safety signs, e.g. M001, P001 | open |
+| ISO 8601-1 | Date and time — Representations for information interchange — Part 1: Basic rules´ | open |
+| ISO 9001:2015 | Quality Management Systems - Fundamentals and vocabulary | open |
+| ISO 13485 | Medical devices — Quality management systems — Requirements for regulatory purposes | open |
+| ISO 14617-2:2025 | Graphical symbols for diagrams - Part 2: Graphical symbols |  open |
+| ISO 14971 | Risk Management Process | open |
+| ISO 15223 | Medical devices — Symbols to be used with information to be supplied by the manufacturer | open |
 | **ISO 20417:2026** | ´Medical devices — Information to be supplied by the manufacturer | to be included | used as pilot for analysis |
-| ISO 22742:2010 | QR Code |
-| ISO/IEC 62304 | Medical device software — Software life cycle processes |
-| ISO 62366 |
-| FDA 21 CFR Part 820 |
-| **EMDN** | European Medical Device Nomenclature |
+| ISO 22742:2010 | QR Code | open |
+| ISO/IEC 62304 | Medical device software — Software life cycle processes | open |
+| ISO 62366 | Usability-Engineering-Prozess | open |
+| FDA 21 CFR Part 820 | |  open |
+| **EMDN** | European Medical Device Nomenclature | open | may provide supplementary information, esp. for glossary |
 | BS EN 1041:2008 | requirements for information to be supplied by a manufacturer for medical devices | outdated  | Replaced by newer rules like ISO 20417 under modern EU medical regulations |
-| MDD | Medical Device Directive |
-| MDR | Medical Device Regulation |
-| IVDR | Implantable Devices |
-| IMDRF | International Medical Device Regulators Forum |
+| MDD | Medical Device Directive | open |
+| MDR | Medical Device Regulation | open |
+| IVDR | Implantable Devices | open |
+| IMDRF | International Medical Device Regulators Forum | open |
 
 # Links
+
+The following links may be helpful for further analysis:
 
 * [Johner Institut](https://www.johner-institut.de/blog/regulatory-affairs/iso-20417/)
 * http://www.imdrf.org/docs/imdrf/final/technical/imdrf-tech-181031-grrp-essential-principles-n47.pdf
