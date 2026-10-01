@@ -1,0 +1,46 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+Title "Legislation to DigLblElements"
+
+class "Legislation" as leg {
+  Req_ID
+  Pillar
+  Regulatory_requirement
+  Source_of_provision
+  Regulatory_artefact
+  Applicable_scope
+  Regulatory_status
+  Required_information
+  Current_provision
+  Modality
+  Device_dimension
+  Applies from
+  Obligated actor
+  Ethical flag
+  Notes
+}
+
+class "Digital Label Element Requirement" as dle_req {
+  source_artefact
+  requirement_level
+  cardinality
+  relationship
+  target_artefact
+}
+
+class "Digital Label Element" as dle {
+    artefact
+    type
+}
+
+leg::Regulatory_artefact -right-> dle::artefact
+leg::Modality -right-> dle::type
+leg::Regulatory_status -right-> dle_req::requirement_level
+
+dle::artefact -right-> dle_req::source_artefact
+dle::artefact -right-> dle_req::target_artefact
+
+
+@enduml

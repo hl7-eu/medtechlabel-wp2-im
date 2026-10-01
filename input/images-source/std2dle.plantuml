@@ -1,0 +1,39 @@
+@startuml
+
+'skinparam svgDimensionStyle false
+
+Title "Standard to DigLblElements"
+
+class "Standard" as std {
+  source_artefact
+  requirement_level
+  cardinality
+  relationship
+  target_artefact
+}
+
+class "Digital Label Element Requirement" as dle_req {
+  source_artefact
+  requirement_level
+  cardinality
+  relationship
+  target_artefacts
+}
+
+class "Digital Label Element" as dle {
+    artefact
+    type
+}
+
+std::requirement_level -right-> dle_req::requirement_level
+std::cardinality -right-> dle_req::cardinality
+std::relationship -right-> dle_req::relationship
+
+std::source_artefact -left-> "1" dle::artefact : synchronize
+std::target_artefact -left-> "\n1..*" dle::artefact : synchronize
+
+dle_req::source_artefact <-- dle::artefact
+dle_req::target_artefact <-- dle::artefact
+
+
+@enduml
