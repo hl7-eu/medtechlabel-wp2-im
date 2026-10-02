@@ -26,21 +26,26 @@ title MindMap with all details assembled so far
 ---_ testing
 ---_ labeling
 ---_ handling
-----_ before/during/after use
 ----_ prepare for use
 -----_ sterilize
 ----_ prepare for storage
 ----_ before use
 -----_ heating/cooling
-----_ use
-----_ reuse
+----_ during use
+----_ after use
+-----_ cooling
+------_ freezing
+----_ for reuse
 ----_ dispose
 -----_ sterilize
 ----_ storing
 --[#ffb] Codes
 ---_ Country
 ---_ Language
----_ ....
+---_ Symbol
+----_ ISO 7000
+----_ ISO 7010
+---_ other..
 --[#ffb] Formats
 ---_ Date/Time
 ---_ Numbers
@@ -54,9 +59,10 @@ title MindMap with all details assembled so far
 ++++_ Telecom
 +++_ Product Identification
 +++_ use of symbols
+++ (medical) device (aka product)
 ++ Product Information
 +++_ name + description
-+++_ [[CodeSystem-DeviceClass.html class]]: I, II, III
++++_ [[CodeSystem-DeviceClass.html class]]: I, II, IIa, IIb, III
 +++_ [[CodeSystem-DeviceType.html type]]/family
 +++_ property
 ++++_ single use/reusable
@@ -65,6 +71,7 @@ title MindMap with all details assembled so far
 ++++_ sterilizable
 ++++_ sharp (edges)
 ++++_ nano technology
+++++_ other...
 +++_ production date
 +++_ expiry date
 +++_ Safety-related warnings or restrictions
@@ -73,13 +80,18 @@ title MindMap with all details assembled so far
 ++ Container
 +++_ (as part of package)
 ++ Specific (produced) Device
-+++_ Serial Number
-+++_ Lot Number
-+++_ Batch Number
-+++_ detachable component
-++++_ ....
++++_ Identification
+++++_ Serial Number
+++++_ Lot Number
+++++_ Batch Number
++++_ (detachable) component
++++_ other....
 ++ Accessory
++++_ identification
++++_ description
 ++ Spare Part
++++_ identification
++++_ description
 ++ Information
 +++_ on Website
 +++_ on Package/Box

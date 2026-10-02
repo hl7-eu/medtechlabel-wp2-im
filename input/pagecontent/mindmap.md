@@ -1,7 +1,7 @@
 <style>
 table th {background: #1C5870}
 table th {color: #fff}
-table tr:nth-child(even) {background: #48a9cf}
+table tr:nth-child(even) {background: #d2f2ff}
 table tr:nth-child(odd) {background: #FFF}
 </style>
 

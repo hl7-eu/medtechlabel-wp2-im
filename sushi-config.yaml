@@ -9,8 +9,8 @@ name: MedTechLabel
 title: MedTechLabel WP2 T1.1 Information Model Guide
 description: WP2 T1.1 Information Model for Device Labeling
 status: draft # draft | active | retired | unknown
-version: 0.4.5
-date: 2026-10-01
+version: 0.4.6
+date: 2026-10-02
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build
@@ -190,20 +190,24 @@ menu:
 # is specified by id or name, SUSHI will replace it with the correct
 # URL when generating the IG JSON.
 #
-# groups:
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
-#
+groups:
+  GroupA:
+    name: MindMap
+    description: The Library of Digital Label Elements
+    resources:
+    - StructureDefinition/MindMap
+  GroupB:
+    name: Library
+    description: The Library of Digital Label Elements
+    resources:
+    - CodeSystem/DigitalLabelElement
+  GroupC:
+    name: Mappings
+    description: Mapping of digital label elements to other concepts
+    resources:
+    - ConceptMap/DLE2ISO7000
+    - ConceptMap/DLE2ISO7010
+
 #
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and

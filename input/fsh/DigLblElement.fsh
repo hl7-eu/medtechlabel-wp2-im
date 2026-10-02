@@ -4,6 +4,7 @@ Title: "Digital Label Element"
 Description: """
 All possible **digital label elements** are listed hierarchically in this codesystem
 to help aligning it with.
+This list is also referred to as *digital label element library*.
 """
 
 * ^version = "0.1.0"
@@ -434,7 +435,7 @@ to help aligning it with.
     * #serialNumber "serial number" "serial number"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-    * #versionIdentifier "verison identifier" "version identifier^"
+    * #versionIdentifier "verison identifier" "version identifier"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
     * #donorIdentifier "donor identifier" "identifier for the donor"
@@ -465,9 +466,11 @@ to help aligning it with.
     * #productName "name of the product"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-      * #tradeName "trade name" "trade name for the product"
-        * ^property[+].code = #dleType
-        * ^property[=].valueCode = #model
+      * ^property[+].code = #synonym
+      * ^property[=].valueCode = #tradeName
+    * #tradeName "trade name" "trade name for the product"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
   * #address "address" "address and parts thereof"
     * ^designation.language = #de
     * ^designation.value = "Adresse"
@@ -1192,6 +1195,8 @@ to help aligning it with.
     * #symbolOnPackage "symbols on package"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
+      * ^property[+].code = #comment
+      * ^property[=].valueString = "what is meant by this?"
     * #symbolIso7000 "iso 7000 symbols"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #codesystem
