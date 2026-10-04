@@ -4,7 +4,6 @@ skinparam svgDimensionStyle false
 
 title Information Model
 
-
 cloud "Accompanying Information" {
 
     class "Manufacturer" as manu {
@@ -110,7 +109,7 @@ class "Property" as prop {
     value
 }
 
-cloud "physical Objects" {
+cloud "Physical Objects" {
     abstract class "physical Object" as physObj {
         physicalSize
     }

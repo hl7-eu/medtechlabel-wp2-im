@@ -4,6 +4,8 @@
 
 title Abstract Model
 
+package "Basics (directly mentioned as requirements)" {
+
 class "Property" as prop
 
 class "Object" as obj
@@ -19,16 +21,42 @@ class "Format" as format
 de -- dt : has >
 de -- format : uses >
 
-class "Codesystem" as cs
 
 class "Code" as code
 
-cs *-- "0..*" code
-de -- cs : uses >
+de -- code : uses >
 
 class "Procedure" as proc
 
 proc -left- obj : perform on >
+
+}
+
+package "Supporting (derived information)" {
+
+class "Relationship" as rel
+Note right of rel
+to link artefacts
+together
+end Note
+
+class "Codesystem" as cs
+class "Value Set" as vs
+Note right of vs
+normally only 
+a subset from 
+the codesystem 
+is used
+end Note
+
+vs -left- cs : subset of >
+
+rel -[hidden]down- cs
+
+}
+
+cs *-- "0..*" code : belongs to <
+vs *-- "0..*" code : contained in <
 
 
 @enduml

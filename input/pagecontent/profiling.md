@@ -10,9 +10,13 @@ Another important aspect is **profiling the model**!
 
 This is not to be mixed with profiling as it is known from the standards world.
 Profiling a model means to constrains the general information model 
-for specific use cases. It must be possible to instantiate the information model
-to cover all identified use cases.
-This page shall collect some specialisations that will occur or must be documented:
+for specific use cases or sub-sepcialisations. It must be possible to instantiate the information model
+to cover all identified use cases or specific subinformation.
+
+## Profiling by Use Cases
+
+The commonly expected way of profiling is to consider the conditions that are contained in the requirements.
+For example, what is needed if a device is sterile? 
 
 * implantable
 * sterile MDs
@@ -44,3 +48,14 @@ That may primarily result in a matrix:
 | ... | | |
 
 More rows and columns will be added.
+
+## Profiling Sub-structures
+
+Another finding is that the requirements contain a lot of precoordinated terms that refer to 
+detailed artefacts. For example, the definition for "information to be provided by manufacturer" according to ISO 18113
+is "label, instructions for use, and any other information that is related to identification, 
+technical description, intended purpose and proper use of the medical device, but excluding shipping documents".
+Such a statement can be split apart by using some kind of formal language.
+But that approach will result in a huge list of fragmented statements that cannot be processed directly.
+Therefore, it is more reasonable to process the definitions/statements by profiling a snippet from the information model
+and showing that.

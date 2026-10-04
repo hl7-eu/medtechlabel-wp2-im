@@ -130,27 +130,36 @@ The report from this task (WP2 T2.2) may use the following structure:
 
 Following some standards that may or may not be of relevance:
 
-| Standard | Title | Status | Purpose | Comment |
-| --- | --- | --- | --- |
+| Standard | Title | Status | Purpose | Consideration | Comment |
+| --- | --- | --- | --- | --- |
 | ISO 639 | Code for individual languages and language groups | open |
 | ISO 780 | Packaging — Distribution packaging — Graphical symbols for handling and storage of packages | open |
 | ISO 3166 | Country codes | open |
 | ISO 3864-1:2011 | ´Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs and safety markings | open |
-| ISO 7000 | Graphical Symbols for use on Equipment, e.g. 1641 | open | content |
-| ISO 7010:2019 | Graphical symbols — Safety colours and safety signs — Registered safety signs, e.g. M001, P001 | open | content |
-| ISO 8601-1 | Date and time — Representations for information interchange — Part 1: Basic rules´ | open |
+| ISO 7000 | Graphical Symbols for use on Equipment, e.g. 1641 | open | Content: Icons | supporting |
+| ISO 7010:2019 | Graphical symbols — Safety colours and safety signs — Registered safety signs, e.g. M001, P001 | open | Content: Icons | supporting |
+| ISO 8601-1 | Date and time — Representations for information interchange — Part 1: Basic rules´ | open | 
 | ISO 9001:2015 | Quality Management Systems - Fundamentals and vocabulary | open |
 | ISO 13485 | Medical devices — Quality management systems — Requirements for regulatory purposes | open |
 | ISO 14617-2:2025 | Graphical symbols for diagrams - Part 2: Graphical symbols |  open |
-| ISO 14971 | Risk Management Process | open |
-| ISO 15223 | Medical devices — Symbols to be used with information to be supplied by the manufacturer | open |
-| **ISO 20417:2026** | ´Medical devices — Information to be supplied by the manufacturer | to be included | | used as pilot for analysis |
+| ISO 14971 | Risk Management Process | open | Content and semantics <br>Assurance and decisions | supporting |
+| ISO 15223 | Medical devices — Symbols to be used with information to be supplied by the manufacturer | open | Presentation<br>Content and semantics | primary | 
+| ISO 17664 | Processing instructions and supporting validation | open | Information set <br> Assurance and decisions| supporting |
+| ISO 18113, Parts 1-5 | IVD information by product and intended user | open | Product and use profile <br>Content and semantics | primary |
+| ISO/IEC 18975 | Internet links from product identifcation | open |Access service<br> Content and Semantics | primary |
+| **ISO 20417:2026** | ´Medical devices — Information to be supplied by the manufacturer | to be included | Product and use profile<br> Content and semantics | primary | used as pilot for analysis |
 | ISO 22742:2010 | QR Code | open |
-| ISO/IEC 62304 | Medical device software — Software life cycle processes | open |
-| ISO 62366 | Usability-Engineering-Prozess | open |
+| ISO 23903 | Semantics architecture and model relationships | open | Content and semantics<br> Assurance and decisions | primary |
+| ISO 24884 | Electronic IFU delivery for IVDs | open | Information set <br>Access service | primary |
+| EN 50419 | Electrical equipment marking and conditiona locations |  open | Presentation <br>Assurance and decisions | supporting |
+| IEC 60601-1<br>IEC 61010-1 | Equipment safety information within the applicable scope |  open | Product and use profile <br>Content and semantics | supporting |
+| ISO/IEC 62304 | Medical device software — Software life cycle processes | open | Assurance and decisions <br>Information set | supporting |
+| ISO 62366 | Usability evidence for information and interaction | open | Presentation<br>Assurance and decisions | supporting |
+| IEC/IEEE 82079-1 | Information quality and preparation for intended use | open | Content and semantics<br>Presentation | supporting |
+| ISO/IEC 82304-1 | Health software information and product assurance | open | Information set <br>Assurance and decisions |primary |
 | FDA 21 CFR Part 820 | |  open |
-| **EMDN** | European Medical Device Nomenclature | open | | may provide supplementary information, esp. for glossary |
-| BS EN 1041:2008 | requirements for information to be supplied by a manufacturer for medical devices | outdated  | |  replaced by newer rules like ISO 20417 under modern EU medical regulations |
+| **EMDN** | European Medical Device Nomenclature | open | | | may provide supplementary information, esp. for glossary |
+| BS EN 1041:2008 | requirements for information to be supplied by a manufacturer for medical devices | outdated  | | | replaced by newer rules like ISO 20417 under modern EU medical regulations |
 | MDD | Medical Device Directive | open |
 | MDR | Medical Device Regulation | open |
 | IVDR | Implantable Devices | open |

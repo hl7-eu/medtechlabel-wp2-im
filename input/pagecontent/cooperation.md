@@ -1,9 +1,31 @@
 How to forward the information between the different work packages?
 In other words, how to cooperate and transfer information between WPs?
 
+## Information Gathering
+
+Ideally, the information should be collected as follows thus transforming the details from requirements
+and standards into a fine-grained list of artefacts for the library:
+
 <div width="500px">
 {% include cooperation.svg %}
 </div>
+
+But presumably, it has to be done in separated steps:
+
+* initiate artefact library of data elements for MD labels.
+* extract 
+* create information model
+* create profiles for use cases, eg. "sterile devices"
+* create profiles for data subsets, eg. "information provided by manufacturer"
+* verify model against profiles
+* ...
+
+<div width="500px">
+{% include cooperation2.svg %}
+</div>
+
+The idea is to reduce the amount of work by providing the details for specific data subsets, 
+for example "information provided by manufacturer". 
 
 ## Requirement Gathering
 
