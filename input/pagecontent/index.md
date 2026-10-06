@@ -5,7 +5,10 @@ table tr:nth-child(even) {background: #d2f2ff}
 table tr:nth-child(odd) {background: #FFF}
 </style>
 
-# Introduction
+Please be aware that this page is still under construction and not final.
+Comments and further input are welcome.
+
+## Introduction
 
 This is the starting page for the **MedTechLabel** project **Information Model Guide** (IG)
 that collects the necessary information for creating the [information model](informationmodel.html) for medical devices.
@@ -22,18 +25,31 @@ The primary purpose for now is to assemble:
   * dedicated **codesystems** identified so far, e.g. for
     * [digital label element library](CodeSystem-DigitalLabelElement.html)
     * device [class](CodeSystem-DeviceClass.html) and [type](CodeSystem-DeviceType.html)
-	* symbols ([ISO 7000](CodeSystem-Symbols7000.html)) and signs
+	* symbols and signs ([ISO 7000](CodeSystem-Symbols7000.html))  
+	* safety colours and safety signs ([ISO 7010](CodeSystem-SafetySigns^7010.html))  
 	* [safety sign statements](CodeSystem-SafetySignStatement.html)
 	* [use](CodeSystem-Use.html)
 	* and some more
 
-## Disclaimer
+### In Sope
+
+* (basic) information model (with relations and attributes)
+* taxonomoy to organize artefacts
+* sample profiles
+
+### Out of Scope
+
+* process modelling
+* (complete) knowledge representation
+  * conditions
+
+### Disclaimer
 
 Although [FHIR](https://www.hl7.org/fhir) tools are used, 
 it does not have any direct relation to/with FHIR.
 
 
-## Goal
+### Goal
 
 The primary goal is to gather the requirements for labels for medical devices.
 This site collects the items that are to be considered and may appear (due to legal
@@ -57,7 +73,7 @@ Or, alternatively, more in portrait mode:
 
 In the end, what will appear on a label is the result of the analysis.
 
-# What is a medical device?
+## What is a medical device?
 
 A medical device can be described in many ways:
 
@@ -76,7 +92,7 @@ A medical device can be described in many ways:
 This specification has to abstract from it in order to allow 
 for providing all the ncessary details for a modelling.
 
-# Next Steps
+## Next Steps
 
 The following issues are open as new steps and should be performed in the 
 proposed order:
@@ -99,15 +115,52 @@ proposed order:
 
 This list can for the time being be taken as a plan for T2.2.
 
-## Open Topics
+### Open Topics
 
 * Who can do the detailed analysis for all standards?
 * How to validate the analyses?
 * How to use the detailed requirements to run an engine that validates the model?
+* How to deal with contradictory requirements in regulatory vs. standards?
 
-# Results of this Task
+## Remaining Notes to reconcile
 
-The report from this task (WP2 T2.2) may use the following structure:
+label:
+* content? where?
+
+questions:
+* add "under construction" icon on top of IG
+* add process and actors to taxonomy, color-code diagram
+
+
+requirements:
+* abstract
+  * access to digital implant cards without passwort
+* symbols
+  * = icon + text + originating standard + standard using it + condition(s) when to use
+  * specific requirements associated with a symbol -> submodel
+  * clarify whether an icon can be added to a code in a codesystem, eg in a property by extensions!?
+  * list of all symbols provided as a file to include in IG
+  
+logical model for:
+* abstract label
+  * form
+    * digital label
+	  * identifier, URL
+    * printed label
+	  * attached to package/container/device
+	* hybrid
+  * requirements as profiles derived from it
+    * name: reference the originating clause
+	* add addtl explanations
+	* add constraints
+* specialisations as derived logical model?
+
+additional columns for library/artefacts list:
+* providedBy (realized by relatedTo?)
+
+## Results of this Task
+
+The report (D2.2?) from this task (WP2 T2.2) may use the following structure:
 
 1. introduction
 1.1 scope
@@ -126,7 +179,20 @@ The report from this task (WP2 T2.2) may use the following structure:
   * glossary
 
 
-# Overview about Standards
+## Overview about Regulations
+
+| Regulation | Title | Status | Purpose | Consideration | Comment |
+| --- | --- | --- | --- | --- |
+| **EUDAMED** | |  open |
+| **EMDN** | European Medical Device Nomenclature | open | | | may provide supplementary information, esp. for glossary |
+| EU MDD | Medical Device Directive | open |
+| EU MDR | Medical Device Regulation | open |
+| IVDR | Implantable Devices | open |
+| IMDRF | International Medical Device Regulators Forum | open |
+| FDA 21 CFR Part 820 | |  open |
+| UDI | Unique Device Identification | open |
+
+## Overview about Standards
 
 Following some standards that may or may not be of relevance:
 
@@ -157,15 +223,9 @@ Following some standards that may or may not be of relevance:
 | ISO 62366 | Usability evidence for information and interaction | open | Presentation<br>Assurance and decisions | supporting |
 | IEC/IEEE 82079-1 | Information quality and preparation for intended use | open | Content and semantics<br>Presentation | supporting |
 | ISO/IEC 82304-1 | Health software information and product assurance | open | Information set <br>Assurance and decisions |primary |
-| FDA 21 CFR Part 820 | |  open |
-| **EMDN** | European Medical Device Nomenclature | open | | | may provide supplementary information, esp. for glossary |
 | BS EN 1041:2008 | requirements for information to be supplied by a manufacturer for medical devices | outdated  | | | replaced by newer rules like ISO 20417 under modern EU medical regulations |
-| MDD | Medical Device Directive | open |
-| MDR | Medical Device Regulation | open |
-| IVDR | Implantable Devices | open |
-| IMDRF | International Medical Device Regulators Forum | open |
 
-# Links
+## Links
 
 The following links may be helpful for further analysis:
 

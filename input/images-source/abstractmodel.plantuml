@@ -2,31 +2,31 @@
 
 'skinparam svgDimensionStyle false
 
-title Abstract Model
+title Abstract Model creating the Taxonomy
 
 package "Basics (directly mentioned as requirements)" {
 
-class "Property" as prop
+class "Property" as prop #dfd
 
-class "Object" as obj
+class "Object" as obj #dfd
 
-class "Data Element" as de
+class "Data Element" as de #dfd
 
 obj "1" *-- "1..*" de
 obj *-- "0..*" prop
 
-class "Data Type" as dt
-class "Format" as format
+class "Data Type" as dt #dfd
+class "Format" as format #dfd
 
 de -- dt : has >
 de -- format : uses >
 
 
-class "Code" as code
+class "Code" as code #dfd
 
 de -- code : uses >
 
-class "Procedure" as proc
+class "Procedure" as proc #dfd
 
 proc -left- obj : perform on >
 
@@ -34,14 +34,16 @@ proc -left- obj : perform on >
 
 package "Supporting (derived information)" {
 
-class "Relationship" as rel
+class "Relationship" as rel #ffd
 Note right of rel
 to link artefacts
 together
 end Note
 
-class "Codesystem" as cs
-class "Value Set" as vs
+class "Actor" as a #fdd
+
+class "Codesystem" as cs #dfd
+class "Value Set" as vs #ffd
 Note right of vs
 normally only 
 a subset from 
@@ -55,8 +57,15 @@ rel -[hidden]down- cs
 
 }
 
+proc -right- a  : performs <
+
 cs *-- "0..*" code : belongs to <
 vs *-- "0..*" code : contained in <
 
+legend
+<font color=green> green: in scope</font>
+<font color=yellow>yellow: supporting</font>
+<font color=red>red: out-of scope</font>
+end legend
 
 @enduml

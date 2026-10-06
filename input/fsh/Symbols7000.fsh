@@ -13,14 +13,23 @@ Description: "**ISO 7000** - Graphical Symbols for use on Equipment"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.8" // Ersetzen Sie dies durch Ihre reale OID
 
-* ^property[+].code = #origin
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#origin"
+//* ^property[+].code = #origin
+//* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#origin"
+//* ^property[=].description = "what is the associated component to this element?"
+//* ^property[=].type = #code
+//* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+//* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
+* ^property[+].code = #chapter
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#chapter"
 * ^property[=].description = "what is the associated component to this element?"
-* ^property[=].type = #code
-* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+* ^property[=].type = #string
+//* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+//* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * #1640 "technical description" "technical description"
+  * ^property[+].code = #chapter
+  * ^property[=].valueString = "x.y.z"
 * #1641 "consult instructions for use" "for use"
 * #3725 "importer" "importer"
 * #3724 "distributor" "distributor"
@@ -29,8 +38,6 @@ Description: "**ISO 7000** - Graphical Symbols for use on Equipment"
 
 * #2497 "??" "for packaging"
 * #3082 "??" "for packaging"
-  * ^property[+].code = #origin
-  * ^property[=].valueCode = #symbolIso7000-3082
 * #6050 "model number" "for packaging"
 * #2493 "catalog number" "for packaging"
 * #1051 "do not reuse" "for packaging"

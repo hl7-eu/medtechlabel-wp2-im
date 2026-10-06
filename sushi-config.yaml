@@ -6,11 +6,11 @@
 id: medtechlabel
 canonical: http://www.hl7europe.org/medtechlabel
 name: MedTechLabel
-title: MedTechLabel WP2 T1.1 Information Model Guide
-description: WP2 T1.1 Information Model for Device Labeling
+title: MedTechLabel WP2 T2.2 Information Model Guide
+description: WP2 T2.2 Information Model for Device Labeling (D2.2, M13)
 status: draft # draft | active | retired | unknown
-version: 0.4.7
-date: 2026-10-04
+version: 0.4.8
+date: 2026-10-06
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build
@@ -62,18 +62,18 @@ pages:
       title: Information Model
     profiling.md:
       title: Profiling of the Model
-    glossary.md:
-      title: Glossary of Terms
-  ip_statement.md:
-    title: IP Statement
-  terms.md:
-    title: Terms
+  glossary.md:
+    title: Glossary of Terms
   cooperation.md:
     title: WP Cooperation
+  terms.md:
+    title: Terms
   installation.md:
     title: Installation
   notation.md:
     title: Notation
+  ip_statement.md:
+    title: IP Statement
 
 #   implementation.xml:
 #   examples.xml:

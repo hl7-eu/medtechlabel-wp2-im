@@ -89,7 +89,7 @@ Description: "Digital Label Element -> ISO 7000"
 
 * group.element[+].code = #symbolIso7000-3082
 * group.element[=].display = "3082"
-* group.element[=].target[+].code = #3802
+* group.element[=].target[+].code = #3082
 //* group.element[=].target[=].display = "do-not-reuse"
 * group.element[=].target[=].equivalence = #equal
 

@@ -20,6 +20,14 @@ For example, what is needed if a device is sterile?
 
 * implantable
 * sterile MDs
+* allergic materials/substances
+* re-usability (single, multiple, ..)
+* inflammable
+* magnetic (MRT-sensitive)
+* battery
+* disposability
+* materials
+* packaging
 * ...
 
 In what way this will be reflected has to be evaluated separately.
@@ -59,3 +67,7 @@ Such a statement can be split apart by using some kind of formal language.
 But that approach will result in a huge list of fragmented statements that cannot be processed directly.
 Therefore, it is more reasonable to process the definitions/statements by profiling a snippet from the information model
 and showing that.
+
+## Profiling for Use Cases
+
+Another approach for getting model profiles is by use cases.

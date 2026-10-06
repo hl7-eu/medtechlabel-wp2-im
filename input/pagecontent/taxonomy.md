@@ -19,6 +19,7 @@ are organized a taxonomy has been created that consists of the following axes:
   * **codesystem and codes**: coded information for certain items that belong to a codesystem
   * **value set**: subset of the codesystem to be used
   * **relationship**: for specifying the relation between the artefacts (from basics)
+  * **actor**: item that may operate as an actor on a procedure
 
 That results in the following abstract model that will be behind the [information model](informationmodel.html):
 
