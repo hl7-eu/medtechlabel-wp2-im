@@ -10,7 +10,7 @@ An important aspect is the understanding what **conformance** vs. **compliance**
 Those two are a commonly misunderstood or misinterpreted.
 In the following two major different ways of interpreting them are presented:
 
-## Legislation vs. Standard
+### Legislation vs. Standard
 
 This perspective considers from where a requirement is derived:
 
@@ -22,7 +22,7 @@ Taking a legal requirement, as provided from a jurisdiction,
 that is treated as a compliance issue. On the other hand, if a requirement
 is taken from a standard it is taken as conformant.
 
-## Document vs. Implementation
+### Document vs. Implementation
 
 Another way of looking at it is as follows:
 

@@ -66,6 +66,13 @@ This list is also referred to as *digital label element library*.
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
+* ^property[+].code = #hasValue
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasValue"
+* ^property[=].description = "what is the specific value to use? This helps to create the information model."
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
 * ^property[+].code = #dleType
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#dleType"
 * ^property[=].description = "what is the type of this element? This helps to create the information model."
@@ -754,6 +761,9 @@ This list is also referred to as *digital label element library*.
   * #maintaining "maintaining"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
+  * #using "using"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #procedure
   * #training "training"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
@@ -1406,6 +1416,9 @@ This list is also referred to as *digital label element library*.
     * #doNotUse "do not use"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #code
+    * #doNotReuse "do not re-use"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #code
     * #doNotOpen "do not open"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #code
@@ -1490,7 +1503,7 @@ This list is also referred to as *digital label element library*.
   * #efficiency "efficency"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
-  * #satisfacction "satisfaction"
+  * #satisfaction "satisfaction"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
   * #readability "readability of label"

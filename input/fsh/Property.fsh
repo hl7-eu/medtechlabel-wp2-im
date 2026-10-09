@@ -24,10 +24,11 @@ Description: "**Property**"
 * #component "component" "what are the associated components?"
 * #reference "reference" "interesting or relevant reference/link to more information"
 * #category "category" "category of a sign"
-//* #origin "origin" "origin of material"
+* #origin "origin" "origin of material"
 * #dleType "DLE type" "what is the type of this item, i.e. is it relevant for information modelling?"
 * #chapter "chapter" "chapter where defined in standard"
-
+* #hasValue "hasValue" "a specific value to use for this element"
+* #relatedTo "relatedTo" "related to another concept, w/o specifying how"
 
 //ValueSet
 

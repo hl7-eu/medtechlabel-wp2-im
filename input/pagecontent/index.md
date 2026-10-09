@@ -8,7 +8,7 @@ table tr:nth-child(odd) {background: #FFF}
 Please be aware that this page is still under construction and not final.
 Comments and further input are welcome.
 
-## Introduction
+### Introduction
 
 This is the starting page for the **MedTechLabel** project **Information Model Guide** (IG)
 that collects the necessary information for creating the [information model](informationmodel.html) for medical devices.
@@ -26,30 +26,33 @@ The primary purpose for now is to assemble:
     * [digital label element library](CodeSystem-DigitalLabelElement.html)
     * device [class](CodeSystem-DeviceClass.html) and [type](CodeSystem-DeviceType.html)
 	* symbols and signs ([ISO 7000](CodeSystem-Symbols7000.html))  
-	* safety colours and safety signs ([ISO 7010](CodeSystem-SafetySigns^7010.html))  
+	* safety colours and safety signs ([ISO 7010](CodeSystem-SafetySigns7010.html))  
 	* [safety sign statements](CodeSystem-SafetySignStatement.html)
 	* [use](CodeSystem-Use.html)
 	* and some more
 
-### In Sope
+#### In Sope
 
 * (basic) information model (with relations and attributes)
 * taxonomoy to organize artefacts
 * sample profiles
 
-### Out of Scope
+#### Out of Scope
 
 * process modelling
 * (complete) knowledge representation
   * conditions
 
-### Disclaimer
+#### Disclaimer
 
 Although [FHIR](https://www.hl7.org/fhir) tools are used, 
 it does not have any direct relation to/with FHIR.
 
+#### Contributing
 
-### Goal
+Contributions can be done via work package 2 of the MedTechLabel project.
+
+#### Goal
 
 The primary goal is to gather the requirements for labels for medical devices.
 This site collects the items that are to be considered and may appear (due to legal
@@ -73,7 +76,11 @@ Or, alternatively, more in portrait mode:
 
 In the end, what will appear on a label is the result of the analysis.
 
-## What is a medical device?
+#### Funding
+
+This project is funded by the EU.
+
+### What is a medical device?
 
 A medical device can be described in many ways:
 
@@ -92,7 +99,7 @@ A medical device can be described in many ways:
 This specification has to abstract from it in order to allow 
 for providing all the ncessary details for a modelling.
 
-## Next Steps
+### Next Steps
 
 The following issues are open as new steps and should be performed in the 
 proposed order:
@@ -115,14 +122,20 @@ proposed order:
 
 This list can for the time being be taken as a plan for T2.2.
 
-### Open Topics
+#### Open Topics and Questions
+
+When working on this task (and deliverable) the following questions arose:
 
 * Who can do the detailed analysis for all standards?
 * How to validate the analyses?
 * How to use the detailed requirements to run an engine that validates the model?
 * How to deal with contradictory requirements in regulatory vs. standards?
+* What can be achieved with a digital label that a printed one cannot?
+* How to envision and include future requirements and expectations into the current model?
+  * We identify a lot of topics that are relevant but cannot be addressed within the limits of this project!
+  * Building the foundational framework and ontology is very limited.
 
-## Remaining Notes to reconcile
+### Remaining Notes to reconcile
 
 label:
 * content? where?
@@ -130,7 +143,6 @@ label:
 questions:
 * add "under construction" icon on top of IG
 * add process and actors to taxonomy, color-code diagram
-
 
 requirements:
 * abstract
@@ -158,7 +170,9 @@ logical model for:
 additional columns for library/artefacts list:
 * providedBy (realized by relatedTo?)
 
-## Results of this Task
+glossary: https://glossary.i-hd.eu/guest-page
+
+### Results of this Task
 
 The report (D2.2?) from this task (WP2 T2.2) may use the following structure:
 
@@ -178,8 +192,7 @@ The report (D2.2?) from this task (WP2 T2.2) may use the following structure:
   * codesystem with properties as FHIR resource
   * glossary
 
-
-## Overview about Regulations
+### Overview about Regulations
 
 | Regulation | Title | Status | Purpose | Consideration | Comment |
 | --- | --- | --- | --- | --- |
@@ -192,7 +205,7 @@ The report (D2.2?) from this task (WP2 T2.2) may use the following structure:
 | FDA 21 CFR Part 820 | |  open |
 | UDI | Unique Device Identification | open |
 
-## Overview about Standards
+### Overview about Standards
 
 Following some standards that may or may not be of relevance:
 
@@ -225,7 +238,7 @@ Following some standards that may or may not be of relevance:
 | ISO/IEC 82304-1 | Health software information and product assurance | open | Information set <br>Assurance and decisions |primary |
 | BS EN 1041:2008 | requirements for information to be supplied by a manufacturer for medical devices | outdated  | | | replaced by newer rules like ISO 20417 under modern EU medical regulations |
 
-## Links
+### Links
 
 The following links may be helpful for further analysis:
 

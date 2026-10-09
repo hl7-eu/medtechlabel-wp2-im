@@ -14,6 +14,8 @@ actor "WP2" as wp2
 collections "WP2\nDeliverable:\n[[informationmodel.html Information\n    Model]]" as s3
 actor "WP3" as wp3
 actor "WP4" as wp4
+actor "WP5" as wp5
+actor "WP6" as wp6
 participant "[[glossary.html Glossary\n     of\n  Terms]]" as g
 collections "Other \nDeliverables" as r2
 

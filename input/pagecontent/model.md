@@ -1,4 +1,3 @@
-# Model
 
 * Mindmap
   * Documentation as [Logical Model](StructureDefinition-MindMap.html)

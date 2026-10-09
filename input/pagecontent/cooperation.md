@@ -1,7 +1,7 @@
 How to forward the information between the different work packages?
 In other words, how to cooperate and transfer information between WPs?
 
-## Information Gathering
+### Information Gathering
 
 Ideally, the information should be collected as follows thus transforming the details from requirements
 and standards into a fine-grained list of artefacts for the library:
@@ -27,9 +27,9 @@ But presumably, it has to be done in separated steps:
 The idea is to reduce the amount of work by providing the details for specific data subsets, 
 for example "information provided by manufacturer". 
 
-## Requirement Gathering
+### Requirement Gathering
 
-### from Legislation
+#### from Legislation
 
 The following information is collected for legal requirements:
 
@@ -51,7 +51,7 @@ The following information is collected for legal requirements:
 
 The columns being relevant for the information model are marked in bold.
 
-### from Standards
+#### from Standards
 
 Ideally, the requirements extracted from standards will provide exactly the same 
 details as from legislation.
@@ -63,7 +63,7 @@ details as from legislation.
 * Cardinality
 * Target Element
 
-### for Information Models
+#### for Information Models
 
 The following aspects and details are necessary to create an information model:
 
@@ -73,9 +73,9 @@ The following aspects and details are necessary to create an information model:
 * [relationship](CodeSystem-Relationship.html)
 * target [artefact](CodeSystem-DigitalLabelElement.html)
 
-## Requirements Mapping
+### Requirements Mapping
 
-### Legislation to Digital Label Elements
+#### Legislation to Digital Label Elements
 
 The requirements taken from the legislation sheet require a dedicated
 mapping into the artefacts because they are captured in a different precoordination:
@@ -84,7 +84,7 @@ mapping into the artefacts because they are captured in a different precoordinat
 {% include leg2dle.svg %}
 </div>
 
-### Standards to Digital Label Elements
+#### Standards to Digital Label Elements
 
 The requirements taken from the different standards are very similar
 to what is needed for information modelling. 
