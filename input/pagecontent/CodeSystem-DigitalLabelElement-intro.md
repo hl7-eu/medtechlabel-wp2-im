@@ -10,6 +10,7 @@ by properties.
 
 Some columns may need a more detailed explanation:
 
+* status: the colored rows are inactive or just for administrative/organisational purpose
 * Parent: normally, most elements are organized in a hierarchy so that the parent element is shown one level up immediately before the element in question. However, for the precoordinated concepts at the end this is not possible. Therefore, the parent element is directly named.
 * synonym: alternative names
 * comment: any additional remark on the item
@@ -24,4 +25,7 @@ Some columns may need a more detailed explanation:
   * codesystem/code: (set of) values for certain elements
 * component: if it is mentioned that this element has more components
 * "Deutsch": translation into German language (more languages are possible)
-  
+* relatedTo: to which other elements is this entry related?
+* partOf: in case a certain element is part-of another it is listed here
+* component: reverse of partOf
+* hasValue: if an element must have a specific value

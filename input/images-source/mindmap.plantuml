@@ -1,5 +1,7 @@
 @startmindmap
 
+' for edits place into comment
+' include for rendering
 skinparam svgDimensionStyle false
 
 title MindMap with all details assembled so far
@@ -12,6 +14,7 @@ title MindMap with all details assembled so far
 -- Symbol
 ---_ [[CodeSystem-SafetySigns7010.html icon]]
 ---_ [[CodeSystem-SafetySign7010Category.html type]]
+---_ text
 ---_ explanation
 ---_ where used
 -- Documentation\n(=sum of documents)
@@ -20,25 +23,46 @@ title MindMap with all details assembled so far
 ---_ manual
 ---_ technical description
 ---_ website
+---_ compatibility statement
 --[#bfb] Process
----_ manufacturing
----_ documenting
----_ testing
----_ labeling
+---_ producing
+----_ manufacturing
+----_ documenting
+----_ testing
+----_ quality control
+----_ labeling
+-----_ relabeling
+----_ packaging
+-----_ repackaging
+----_ transport
+-----_ importing
+-----_ dispose
+-----_ registering
+---_ process step
+----_ before
+----_ during
+----_ after
 ---_ handling
-----_ prepare for use
------_ sterilize
-----_ prepare for storage
-----_ before use
------_ heating/cooling
-----_ during use
-----_ after use
------_ cooling
-------_ freezing
-----_ for reuse
-----_ dispose
+----_ preparing
+-----_ assembling
+-----_ calibrating
+----_ using
+-----_ cleaning
+-----_ reprocessing
+------_ max
+------_ current
+----_ cooling
+-----_ freezing
+----_ heating
 -----_ sterilize
 ----_ storing
+----_ disposing
+-----_ decontaminating
+---_ methods
+----_ sterilization
+----_ handling condition
+----_ storing condition
+----_ risk elimination
 --[#ffb] Codes
 ---_ Country
 ---_ Language
@@ -49,7 +73,11 @@ title MindMap with all details assembled so far
 --[#ffb] Formats
 ---_ Date/Time
 ---_ Numbers
-
+---_ textual indication/wording
+--[#ffb] special Texts
+---_ "LOT NUMBER"
+---_ "SERIAL NUMBER"
+---_ ...
 
 ++ Label
 +++_ Producer/Manufacturer
@@ -59,6 +87,9 @@ title MindMap with all details assembled so far
 ++++_ Telecom
 +++_ Product Identification
 +++_ use of symbols
++++_ form
+++++_ printed
+++++_ electronic
 ++ (medical) device (aka product)
 ++ Product Information
 +++_ name + description
@@ -69,13 +100,21 @@ title MindMap with all details assembled so far
 ++++_ implantable
 ++++_ disposable
 ++++_ sterilizable
+++++_ consumable
 ++++_ sharp (edges)
 ++++_ nano technology
+++++_ for clinical investigation only
+++++_ origin of material
 ++++_ other...
-+++_ production date
-+++_ expiry date
++++_ date
+++++_ production date
+++++_ expiry date
+++++_ date for safe use
 +++_ Safety-related warnings or restrictions
++++_ marking
+++++_ CE
 ++ Package
++++_ content (what is contained)
 +++_ amount of contained devices
 ++ Container
 +++_ (as part of package)
@@ -86,6 +125,12 @@ title MindMap with all details assembled so far
 ++++_ Batch Number
 +++_ (detachable) component
 +++_ other....
+++ Battery
++++_ replacable
++++_ rechargeable
++++_ material (LMT, ..)
++++_ disposal
++++_ capacity, ...
 ++ Accessory
 +++_ identification
 +++_ description
@@ -97,6 +142,7 @@ title MindMap with all details assembled so far
 +++_ on Package/Box
 +++_ on Container (Blister)
 +++_ on Device
++++_ on Label
 ++ Comment
 
 @endmindmap

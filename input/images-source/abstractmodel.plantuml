@@ -1,6 +1,6 @@
 @startuml
 
-'skinparam svgDimensionStyle false
+skinparam svgDimensionStyle false
 
 title Abstract Model creating the Taxonomy
 
@@ -17,10 +17,11 @@ obj *-- "0..*" prop
 
 class "Data Type" as dt #dfd
 class "Format" as format #dfd
+class "Text" as text #dfd
 
 de -- dt : has >
 de -- format : uses >
-
+de -- text : has >
 
 class "Code" as code #dfd
 

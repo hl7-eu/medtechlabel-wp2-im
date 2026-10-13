@@ -202,7 +202,7 @@ Description: "Digital Label Ontology (based on ConceptMap)"
 * group.element[=].target[=].dependsOn.value = "hasComponent"
 
 * group.element[=].display = "accompanyingInfo"
-* group.element[=].target[+].code = #marking
+* group.element[=].target[+].code = #markingInfo
 * group.element[=].target[=].equivalence = #relatedto
 * group.element[=].target[=].comment = "0..1"
 * group.element[=].target[=].dependsOn.property = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property/relatedTo"
@@ -492,8 +492,8 @@ Description: "Digital Label Ontology (based on ConceptMap)"
 * group.element[=].target[=].dependsOn.property = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property/relatedTo"
 * group.element[=].target[=].dependsOn.value = "mentions"
 
-* group.element[+].code = #expectedLifetime
-* group.element[=].display = "expectedLifetime"
+* group.element[+].code = #expectedLifeTime
+* group.element[=].display = "expectedLifeTime"
 * group.element[=].target[+].code = #expectedServiceTime
 * group.element[=].target[=].equivalence = #relatedto
 * group.element[=].target[=].dependsOn.property = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property/relatedTo"
@@ -596,8 +596,8 @@ Description: "Digital Label Ontology (based on ConceptMap)"
 * group.element[=].target[=].dependsOn.property = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property/relatedTo"
 * group.element[=].target[=].dependsOn.value = "hasValue"
 
-* group.element[+].code = #instructionForUSe
-* group.element[=].display = "instructionForUSe"
+* group.element[+].code = #instructionForUse
+* group.element[=].display = "instructionForUse"
 * group.element[=].target[+].code = #safetyInfo
 * group.element[=].target[=].equivalence = #relatedto
 * group.element[=].target[=].dependsOn.property = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property/relatedTo"

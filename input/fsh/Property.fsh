@@ -29,6 +29,7 @@ Description: "**Property**"
 * #chapter "chapter" "chapter where defined in standard"
 * #hasValue "hasValue" "a specific value to use for this element"
 * #relatedTo "relatedTo" "related to another concept, w/o specifying how"
+* #requirement "requirement or standard"
 
 //ValueSet
 

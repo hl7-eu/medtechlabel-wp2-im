@@ -81,6 +81,12 @@ This list is also referred to as *digital label element library*.
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElementType"
 //* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElementType"
 
+* ^property[+].code = #requirement
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#requirement"
+* ^property[=].description = "from where is this item taken? (Default ISO 20417)"
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 
 * #object "any kind of object" "basic information objects for our model; these must be represented in the information model as classes"
@@ -157,16 +163,25 @@ This list is also referred to as *digital label element library*.
       * ^property[=].valueString = "needs assignment to a role?"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+      * ^property[+].code = #parent
+      * ^property[=].valueCode = #actor
     * #distributor "distributor" "who distributes the product?"
       * ^designation.language = #de
       * ^designation.value = "Distributeur"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
+      * ^property[+].code = #parent
+      * ^property[=].valueCode = #actor
     * #importer "importer" "organization who imports a product that was manufactured in one locale into another locale for the purposes of marketing"
       * ^designation.language = #de
       * ^designation.value = "Importeur"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
+      * ^property[+].code = #parent
+      * ^property[=].valueCode = #actor
+    * #packagingProducer "packaging producer"
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
   * #person "Person" "person"
     * ^designation.language = #de
     * ^designation.value = "Person"
@@ -253,9 +268,21 @@ This list is also referred to as *digital label element library*.
       * #disposeInformation "dispose information" "information for disposing a medical device"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
-      * #digitalImplantCard "digital implant card" "information about an implanted medical device"
+    * #passport "passport" "any kind passport about the MD"
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
+      * #implantCard "implant card" "information about an implanted medical device"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
+//TODO: patients name/id, institution name/addresss, date of implantation		
+        * #digitalImplantCard "digital implant card" "information about an implanted medical device"
+          * ^property[+].code = #dleType
+          * ^property[=].valueCode = #model
+      * #batteryPassport "battery passport" 
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #model
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
     * #specification "specification" "specification"
       * ^designation.language = #de
       * ^designation.value = "Spezifikation"
@@ -375,6 +402,24 @@ This list is also referred to as *digital label element library*.
       * #environmentalHazard "environmental hazard"
       * #radiationHazard "radiation hazard"
       * #allergicReactionHazard "allergic reaction hazard"
+      * #physicalHazard "physical hazard"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
+      * #carcinogenicHazard "carcinogenic"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
+      * #mutagenicHazard "mutagenic"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
+      * #toxicHazard "toxic"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
+        * #toxicToReproductionHazard "toxic to reproduction"
+          * ^property[+].code = #requirement
+          * ^property[=].valueCode = #requirement
+      * #endocrineDisruptingHazard "endcorine disrupting"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
     * #riskControlMeasure "risk control measure"
       * ^designation.language = #de
       * ^designation.value = "Risiko-Kontrollmassnahme"
@@ -473,9 +518,13 @@ This list is also referred to as *digital label element library*.
     * #serialNumber "serial number" "serial number"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-    * #versionIdentifier "verison identifier" "version identifier"
+    * #versionIdentifier "version identifier" "version identifier"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+      * ^property[+].code = #relatedTo
+      * ^property[=].valueCode = #software
+      * ^property[+].code = #relatedTo
+      * ^property[=].valueCode = #medicalDevice
     * #donorIdentifier "donor identifier" "identifier for the donor"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
@@ -509,6 +558,15 @@ This list is also referred to as *digital label element library*.
     * #tradeName "trade name" "trade name for the product"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+      * ^property[+].code = #relatedTo
+      * ^property[=].valueCode = #registered
+    * #tradeMark "trade mark" "trade mark for the product"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
+      * ^property[+].code = #relatedTo
+      * ^property[=].valueCode = #registered
   * #address "address" "address and parts thereof"
     * ^designation.language = #de
     * ^designation.value = "Adresse"
@@ -550,6 +608,8 @@ This list is also referred to as *digital label element library*.
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
   * #title "title" "title"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #model
   * #description "description" "a long description"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
@@ -574,9 +634,20 @@ This list is also referred to as *digital label element library*.
     * #usageCountByTime "usage count by time (period of time^)"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-  * #productionDate "production date"
+  * #date "any date"
     * ^property[+].code = #dleType
-    * ^property[=].valueCode = #model
+    * ^property[=].valueCode = #abstract
+    * #productionDate "production date"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
+      * ^property[+].code = #synonym
+      * ^property[=].valueCode = #manufacturingDate
+    * #dateSafeForUse "date until safe for use"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
+    * #revisionDate "revision date"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
   * #size "size" "size"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
@@ -589,18 +660,28 @@ This list is also referred to as *digital label element library*.
     * #packagingSize "packaging size" "packaging size of the medical device in form of contained items"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-  * #dateSafeForUse "date until safe for use"
+  * #marking "marking" "marking"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
-  * #revisionDate "revision date"
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #model
+    * #markCE "CE mark" "mark with CE symbol"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
   * #statement "statement" "any kind of a statement"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
     * #justification "justification" "justification for (the omission) of an activity"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+    * #compatibilityStatement "compatibility statement" "statement of compatibility"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
+      * #conformityDeclarationEU "EU conformity declaration"
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
   * #contactInformation "contact" "contact information"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
@@ -643,7 +724,7 @@ This list is also referred to as *digital label element library*.
   * #string "string" "any character sequence"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #date "date" "a date of any precision (YYYY,MM, DD)"
+  * #DTdate "date" "a date of any precision (YYYY,MM, DD)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
   * #time "time" "time (clock)"
@@ -710,6 +791,11 @@ This list is also referred to as *digital label element library*.
     * #labeling "labeling" "creating and attaching a label"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #procedure
+      * #relabeling "relabeling" "attaching a new label (different from the original)"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #procedure
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
     * #formatting "formatting data"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #procedure
@@ -722,6 +808,11 @@ This list is also referred to as *digital label element library*.
   * #preparing "preparing for use"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
+    * #assembling "assembling for use"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #procedure
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
     * #calibrating "calibrating for use"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #procedure
@@ -746,24 +837,41 @@ This list is also referred to as *digital label element library*.
     * #riskManagement "managing risks"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #procedure
+    * #registering "registering" "registration of the MD in an official registry, eg the EUDAMED UDI and device registration module"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #procedure
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
   * #transport "transport" "transporting the product"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
-  * #distributing "distributing"
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #procedure
+    * #importing "importing"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #procedure
+    * #distributing "distributing"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #procedure
   * #installing "installing" "installing the product"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
   * #sterilizing "sterilizing"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
+    * ^property[+].code = #synonym
+    * ^property[=].valueCode = #desinfection
   * #maintaining "maintaining"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
   * #using "using"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
+    * #reprocessing "reprocessing" "preparing for a second use"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #procedure
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
+      * ^property[+].code = #synonym
+      * ^property[=].valueCode = #refurbishing
   * #training "training"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
@@ -799,16 +907,35 @@ This list is also referred to as *digital label element library*.
     * ^property[=].valueCode = #property
     * ^designation.language = #de
     * ^designation.value = "versiegelt"
+  * #clinicalInvestigationOnly "for clinical investigation only"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+    * ^property[+].code = #hasText
+    * ^property[=].valueCode = #txtExclusively4ClinicalUse
+    * ^designation.language = #de
+    * ^designation.value = "nur für klinische Untersuchungen"
+  * #inVitroDiagnosticsUse "for in-vitro diagnostics use"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
   * #calibrated "calibrated"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #property
     * ^designation.language = #de
     * ^designation.value = "kalibriert"
   * #detachable "detachable" "detachable or removable"
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #property
     * ^designation.language = #de
     * ^designation.value = "abnehmbar/entfernbar"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
+  * #consumable "consumable"
+    * ^designation.language = #de
+    * ^designation.value = "verschluckbar"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
   * #legible "legible"
     * ^designation.language = #de
     * ^designation.value = "lesbar"
@@ -827,6 +954,11 @@ This list is also referred to as *digital label element library*.
   * #frequencyOfResponse "frequency of response"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #property
+  * #reprocessingLimit "max number of reprocessing the device"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
   * #latency "latency"
     * ^designation.language = #de
     * ^designation.value = "Latenz"
@@ -860,7 +992,34 @@ This list is also referred to as *digital label element library*.
     * ^designation.value = "kommerzielles Produkt"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #property
-	  
+  * #registered "registered"
+    * ^designation.language = #de
+    * ^designation.value = "registriert"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #property
+
+* #text "special texts" "special textual strings or wordings to be used"
+  * ^property[+].code = #inactive
+  * ^property[=].valueBoolean = true
+  * ^property[+].code = #dleType
+  * ^property[=].valueCode = #abstract
+  * #txtLotNumber "LOT NUMBER"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #text
+    * ^property[+].code = #partOf
+    * ^property[=].valueCode = #label
+  * #txtSerialNumber "SERIAL NUMBER"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #text
+    * ^property[+].code = #partOf
+    * ^property[=].valueCode = #label
+  * #txtExclusively4ClinicalUse "exclusively for clinical use"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #text
+  * #txtExclusively4ClinicalInvestigation "exclusively for clinical investigation"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #text
+	
 * #codesystem "special codes/values" "probably codes or values to select from; they must be separated into distinct code systems"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -1149,6 +1308,13 @@ This list is also referred to as *digital label element library*.
         * ^property[=].valueCode = #code
         * ^designation.language = #de
         * ^designation.value = "Beleuchtung"
+      * #radiationCondition "radiation condition"
+        * ^designation.language = #de
+        * ^designation.value = "Strahlung"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #code
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
       * #electricCondition "electric condition"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #code
@@ -1176,6 +1342,11 @@ This list is also referred to as *digital label element library*.
       * #degreeOfInternantionalizationCondition "degree of internationalization condition"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #code
+      * #exclusiveCondition "exclusive condition" "restrictions on combinations with other devices or equipment"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #code
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
       * #socialCondition "social condition"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #code
@@ -1209,12 +1380,32 @@ This list is also referred to as *digital label element library*.
   * #methodOfSterilization "method of sterilization"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
+  * #methodOfRiskElimination "method of risk elimination"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #codesystem
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+    * #methodOfRadiationProtection "protective measure against radiation"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #codesystem
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
   * #origin "origin"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
     * #biologicalOrigin "biological origin"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #code
+      * #humanOrigin "human origin"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #code
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
+      * #animalOrigin "animal origin"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #code
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #requirement
   * #containment "contains ..."
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
@@ -1565,7 +1756,7 @@ This list is also referred to as *digital label element library*.
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
   * ^property[+].code = #comment
-  * ^property[=].valueString = "is this hierarchy needed? ACtors - as organisations - are already added"
+  * ^property[=].valueString = "is this hierarchy needed? Actors - as organisations - are already added"
 	
 * #precoordinatedConcept "pre-coordinated concepts" "following a list of items that are a precoordination of other concepts in order to simplify the collection and indication of requirements"
   * ^property[+].code = #inactive
@@ -1630,6 +1821,80 @@ This list is also referred to as *digital label element library*.
     * ^property[=].valueCode = #printedLabel
     * ^property[+].code = #parent
     * ^property[=].valueCode = #digitalLabel
+  * #registeredPlaceOfBusiness "registered place of business" "what is the manufacturer registered address"
+    * ^designation.language = #de
+    * ^designation.value = "registrierte Geschäftsadresse"
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #address
+    * ^property[+].code = #partOf
+    * ^property[=].valueCode = #manufacturer
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #registered
+    * ^property[+].code = #origin
+    * ^property[=].valueCode = #requirement
+  * #assemblerName "name of assembler" "name of person that assembles the device"
+    * ^designation.language = #de
+    * ^designation.value = "hybrides Label"
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #name
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #assembling
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #conformityAssessmentOrg "organisation performing the conformity assessment"
+    * ^designation.language = #de
+    * ^designation.value = "hybrides Label"
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #organization
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #conformityAssessmentOrgID "ID of organisation performing the conformity assessment"
+    * ^designation.language = #de
+    * ^designation.value = "hybrides Label"
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #identifier
+    * ^property[+].code = #partOf
+    * ^property[=].valueCode = #conformityAssessmentOrg
+    * ^property[+].code = #partOf
+    * ^property[=].valueCode = #markCE
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #humanBlood "human blood" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #humanOrigin
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #plasmaDerivative "plasma derivative" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #humanOrigin
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #tissue "tissue" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #humanOrigin
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #humanCell "human cell" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #humanOrigin
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #animalCell "animal cell" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #humanOrigin
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #eudamed "EUDAMED" 
+    * ^property[+].code = #relatedTo
+    * ^property[=].valueCode = #organization
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+  * #AIsystem "AI system" 
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #requirement
+    * #generativeAIsystem "generative AI system" 
+      * ^property[+].code = #requirement
+      * ^property[=].valueCode = #requirement
 
 
 	
