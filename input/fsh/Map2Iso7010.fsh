@@ -46,6 +46,6 @@ Description: "Digital Label Element -> ISO 7010"
 * group.element[=].target[=].equivalence = #equivalent
 
 
-//* group.unmapped.mode = #fixed
+* group.unmapped.mode = #provided
 //* group.unmapped.code = #XXXX
 //* group.unmapped.display = "no mapping"

@@ -24,25 +24,25 @@ Description: "Digital Label Element -> ISO 7000"
 * group.element[+].code = #symbolIso7000-1051
 * group.element[=].display = "1051"
 * group.element[=].target[+].code = #1051
-* group.element[=].target[=].display = "doNotReuse"
+* group.element[=].target[=].display = "do not reuse"
 * group.element[=].target[=].equivalence = #equal
 
 * group.element[+].code = #symbolIso7000-1641
 * group.element[=].display = "1641"
 * group.element[=].target[+].code = #1641
-//* group.element[=].target[=].display = "doNotReuse"
+//* group.element[=].target[=].display = "do not reuse"
 * group.element[=].target[=].equivalence = #equal
 
 * group.element[+].code = #symbolIso7000-2492
 * group.element[=].display = "2492"
 * group.element[=].target[+].code = #2492
-//* group.element[=].target[=].display = "do-not-reuse"
+//* group.element[=].target[=].display = "do not reuse"
 * group.element[=].target[=].equivalence = #equal
 
 * group.element[+].code = #symbolIso7000-2493
 * group.element[=].display = "2493"
 * group.element[=].target[+].code = #2493
-//* group.element[=].target[=].display = "do-not-reuse"
+//* group.element[=].target[=].display = "do not reuse"
 * group.element[=].target[=].equivalence = #equal
 
 * group.element[+].code = #symbolIso7000-2497
@@ -141,6 +141,6 @@ Description: "Digital Label Element -> ISO 7000"
 * group.element[=].target[=].display = "instructions for use"
 * group.element[=].target[=].equivalence = #equal
 
-//* group.unmapped.mode = #fixed
+* group.unmapped.mode = #provided
 //* group.unmapped.code = #XXXX
 //* group.unmapped.display = "no mapping"

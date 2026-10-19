@@ -17,7 +17,7 @@ obj *-- "0..*" prop
 
 class "Data Type" as dt #dfd
 class "Format" as format #dfd
-class "Text" as text #dfd
+class "Text" as text #ffd
 
 de -- dt : has >
 de -- format : uses >
@@ -27,7 +27,7 @@ class "Code" as code #dfd
 
 de -- code : uses >
 
-class "Procedure" as proc #dfd
+class "Procedure" as proc #fd9
 
 proc -left- obj : perform on >
 
@@ -35,7 +35,7 @@ proc -left- obj : perform on >
 
 package "Supporting (derived information)" {
 
-class "Relationship" as rel #ffd
+class "Relationship" as rel #fd9
 Note right of rel
 to link artefacts
 together
@@ -66,6 +66,7 @@ vs *-- "0..*" code : contained in <
 legend
 <font color=green> green: in scope</font>
 <font color=yellow>yellow: supporting</font>
+<font color=orange>orange: for ontology</font>
 <font color=red>red: out-of scope</font>
 end legend
 

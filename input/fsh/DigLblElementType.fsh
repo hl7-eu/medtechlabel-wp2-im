@@ -30,6 +30,7 @@ Description: "**Type of Digital Label Element**"
 * #standard "standard" "standard used in combination with medical devices"
 * #datatype "data type" "data type"
 * #format "format" "formats for representing data"
+* #text "text" "special fixed strings"
 
 //ValueSet
 

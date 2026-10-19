@@ -14,11 +14,14 @@ are organized a taxonomy has been created that consists of the following axes:
   * **data type**: specific data types for certain items (to be applied on data elements)
   * **data format**: requirements for the representation of specific items
   * **property**: elements that are probably to be taken as properties of medical devices
-  * **procedure**: actions to be executed with or upon objects
 * **Supporting**: additional concepts to help organizing the identified items
   * **codesystem and codes**: coded information for certain items that belong to a codesystem
   * **value set**: subset of the codesystem to be used
+  * **text**: some requirements are asking for explicit texts
+* **ontology**: what is needed for creating an ontology
   * **relationship**: for specifying the relation between the artefacts (from basics)
+  * **procedure**: actions to be executed with or upon objects
+* **out of scope**: what is definitely out of scope for creating an information model
   * **actor**: item that may operate as an actor on a procedure
 
 That results in the following abstract model that will be behind the [information model](informationmodel.html):
