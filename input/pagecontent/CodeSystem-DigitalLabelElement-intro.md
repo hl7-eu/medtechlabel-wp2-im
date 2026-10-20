@@ -23,9 +23,6 @@ Some columns may need a more detailed explanation:
   * datatype of an element
   * format: how an element should be visualized
   * codesystem/code: (set of) values for certain elements
-* component: if it is mentioned that this element has more components
+* legal or standard: is this element from a standard or a jurisdictional requirement? (An empty cell is defaulted to ISO 20417.)
+* category: role of the data element
 * "Deutsch": translation into German language (more languages are possible)
-* relatedTo: to which other elements is this entry related?
-* partOf: in case a certain element is part-of another it is listed here
-* component: reverse of partOf
-* hasValue: if an element must have a specific value

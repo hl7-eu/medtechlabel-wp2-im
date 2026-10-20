@@ -28,7 +28,8 @@ Description: "**Property**"
 * #origin "origin" "origin of material"
 * #dleType "DLE type" "what is the type of this item, i.e. is it relevant for information modelling?"
 * #chapter "chapter" "chapter where defined in standard"
-* #requirement "requirement or standard" "where is the origin of this element? (Default is ISO 20417.)"
+* #requirement "legal or standard" "where is the origin of this element? (Default is ISO 20417.)"
+* #roleCategory "category" "data element category"
 
 //for defining the ontology
 * #hasValue "has value" "a specific value to use for this element"

@@ -13,7 +13,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 //* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement2"
  
 //* ^identifier.system = "urn:ietf:rfc:3986"
-//* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.10" // Ersetzen Sie dies durch Ihre reale OID
+//* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.24" // Ersetzen Sie dies durch Ihre reale OID
 
 * ^property[+].code = #hasComponent
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasComponent"
