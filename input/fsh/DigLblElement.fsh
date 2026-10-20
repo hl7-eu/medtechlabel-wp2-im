@@ -2,8 +2,8 @@ CodeSystem: DigitalLabelElementCS
 Id: DigitalLabelElement
 Title: "Digital Label Element"
 Description: """
-All possible **digital label elements** are listed hierarchically in this codesystem
-to help aligning it with.
+All possible **digital label elements** are listed in this codesystem
+in form of a taxonomy to help aligning it with.
 This list is also referred to as *digital label element library*.
 """
 
@@ -66,6 +66,8 @@ This list is also referred to as *digital label element library*.
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/ElementRoleCategory"
 
+
+// ======================= OBJECTS ==========================================
 
 * #object "any kind of object" "basic information objects for our model; these must be represented in the information model as classes"
   * ^property[+].code = #inactive
@@ -130,32 +132,6 @@ This list is also referred to as *digital label element library*.
     * ^designation.value = "Organisation"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
-    * #manufacturer "manufacturer" "organisation that produces the product"
-      * ^designation.language = #de
-      * ^designation.value = "Hersteller"
-      * ^property[+].code = #comment
-      * ^property[=].valueString = "needs assignment to a role?"
-      * ^property[+].code = #dleType
-      * ^property[=].valueCode = #model
-      * ^property[+].code = #parent
-      * ^property[=].valueCode = #actor
-    * #distributor "distributor" "who distributes the product?"
-      * ^designation.language = #de
-      * ^designation.value = "Distributeur"
-      * ^property[+].code = #dleType
-      * ^property[=].valueCode = #abstract
-      * ^property[+].code = #parent
-      * ^property[=].valueCode = #actor
-    * #importer "importer" "organization who imports a product that was manufactured in one locale into another locale for the purposes of marketing"
-      * ^designation.language = #de
-      * ^designation.value = "Importeur"
-      * ^property[+].code = #dleType
-      * ^property[=].valueCode = #abstract
-      * ^property[+].code = #parent
-      * ^property[=].valueCode = #actor
-    * #packagingProducer "packaging producer"
-      * ^property[+].code = #requirement
-      * ^property[=].valueCode = #legal
   * #person "Person" "person"
     * ^designation.language = #de
     * ^designation.value = "Person"
@@ -424,6 +400,9 @@ This list is also referred to as *digital label element library*.
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
 
+
+// ======================= DATA ELEMENTS ==========================================
+
 * #dataElement "data element" "any kind of data element being used (as part of the objects being modelled)"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -663,7 +642,10 @@ This list is also referred to as *digital label element library*.
   * #shelfLife "shelf-life" "period during which a product maintains its stability"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
+
   
+// ======================= DATA TYPES ==========================================
+
 * #dataType "data type" "data types helping to specify details of data elements"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -700,6 +682,9 @@ This list is also referred to as *digital label element library*.
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
 
+
+// ======================= FORMATS ==========================================
+
 * #format "format" "format of certain data"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -730,7 +715,10 @@ This list is also referred to as *digital label element library*.
     * #alphanumericFormat "alphanumeric format" "any sequence of printable characters"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #format
-  
+
+
+// ======================= PROCEDURES ==========================================
+
 * #procedure "procedure" "procedure to perform when handling the product"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -835,6 +823,9 @@ This list is also referred to as *digital label element library*.
   * #measuring "measuring" "the device has a measuring function"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
+
+
+// ======================= PROPERTIES ==========================================
 
 * #property "special property values" "list of properties that can be assigned to the medical device or attributes"
   * ^property[+].code = #inactive
@@ -952,6 +943,8 @@ This list is also referred to as *digital label element library*.
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #property
 
+// ======================= (FIXED) TEXTS ==========================================
+
 * #text "special texts" "special textual strings or wordings to be used"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -969,6 +962,9 @@ This list is also referred to as *digital label element library*.
   * #txtExclusively4ClinicalInvestigation "exclusively for clinical investigation"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #text
+	
+	
+// ======================= CODESYSTEMS + CODES ==========================================
 	
 * #codesystem "special codes/values" "probably codes or values to select from; they must be separated into distinct code systems"
   * ^property[+].code = #inactive
@@ -1722,12 +1718,48 @@ This list is also referred to as *digital label element library*.
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #code
 
+
+// ======================= ACTORS ==========================================
+
 * #actor "actor concepts" "what are the actors involved with digital labels"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
   * ^property[+].code = #comment
   * ^property[=].valueString = "is this hierarchy needed? Actors - as organisations - are already added"
-	
+  * #manufacturer "manufacturer" "organisation that produces the product"
+    * ^designation.language = #de
+    * ^designation.value = "Hersteller"
+    * ^property[+].code = #comment
+    * ^property[=].valueString = "needs assignment to a role?"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #actor
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #organization
+  * #distributor "distributor" "who distributes the product?"
+    * ^designation.language = #de
+    * ^designation.value = "Distributeur"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #actor
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #organization
+  * #importer "importer" "organization who imports a product that was manufactured in one locale into another locale for the purposes of marketing"
+    * ^designation.language = #de
+    * ^designation.value = "Importeur"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #actor
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #organization
+  * #packagingProducer "packaging producer"
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #legal
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #actor
+    * ^property[+].code = #parent
+    * ^property[=].valueCode = #organization
+
+  
+// ======================= PRECOORDINATED CONCEPTS ==========================================
+  
 * #precoordinatedConcept "pre-coordinated concepts" "following a list of items that are a precoordination of other concepts in order to simplify the collection and indication of requirements"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
@@ -1740,23 +1772,15 @@ This list is also referred to as *digital label element library*.
   * #electronicInstruction "electronic instruction"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #instruction
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #code
   * #electronicInterface "electronic interface"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #interface
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #code
   * #edocumentation "e-documentation" "form of electronically accessible information supplied by the manufacturer"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #document
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #code
   * #authorityHavingJurisdiction "authority having jurisdiction" "governmental agency or office assigned to oversee the regulation of a regulated product within a country, jurisdiction or assigned territory"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #authority
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #code
   * #authorizedRepresentative "authorized representative" "organization established within a country or jurisdiction who has received a written mandate from the manufacturer to act on their behalf for specified tasks regarding the latter’s obligations under that country or jurisdiction’s legislation"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #jurisdictionalPerson
