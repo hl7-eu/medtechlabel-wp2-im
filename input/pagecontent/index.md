@@ -247,4 +247,7 @@ The following links may be helpful for further analysis:
 * https://www.johner-institut.de/blog/wp-content/uploads/2020/02/MDR_konsolidiert.html
 * https://www.johner-institut.de/blog/wp-content/uploads/2020/01/IVDR_konsolidiert.html
 * https://blog.hl7.org/hl7-launches-caliper-a-new-fhir-accelerator-advancing-real-time-medical-device-interoperability
+* Regulation (EU) 2017/745 on medical devices (MDR): https://eur-lex.europa.eu/eli/reg/2017/745/2025-01-10
+* Regulation (EU) 2017/746 (IVDR) on in vitro diagnostic medical devices: https://eur-lex.europa.eu/eli/reg/2017/746/2025-01-10
+* EMDN codes: https://webgate.ec.europa.eu/udi-helpdesk/en/other-relevant-information/emdn-codes.html
 * [Johner Institut](https://www.johner-institut.de/blog/regulatory-affairs/iso-20417/)

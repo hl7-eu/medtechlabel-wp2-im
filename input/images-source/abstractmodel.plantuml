@@ -1,5 +1,7 @@
 @startuml
 
+'einblenden für rendering
+'ausblenden (=auskommentieren) für editing
 skinparam svgDimensionStyle false
 
 title Abstract Model creating the Taxonomy
@@ -16,7 +18,7 @@ obj "1" *-- "1..*" de
 obj *-- "0..*" prop
 
 class "Data Type" as dt #dfd
-class "Format" as format #dfd
+class "Format" as format #fd9
 class "Text" as text #ffd
 
 de -- dt : has >
