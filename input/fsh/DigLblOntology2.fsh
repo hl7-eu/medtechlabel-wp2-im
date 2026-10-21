@@ -1,6 +1,6 @@
-CodeSystem: DigitalLabelElement2CS
-Id: DigitalLabelElement2
-Title: "Digital Label Element Ontology"
+CodeSystem: DigitalLabelOntology2CS
+Id: DigitalLabelOntology2
+Title: "Digital Label Element Property Ontology"
 Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement)"
 
 * ^version = "0.1.0"
@@ -10,7 +10,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^content = #supplement
 * ^supplements = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElement"
 
-//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement2"
+//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology2
  
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.24" // Ersetzen Sie dies durch Ihre reale OID
@@ -1523,17 +1523,18 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 
 //ValueSet
 
-ValueSet: DigitalLabelElement2VS
-Id: DigitalLabelElement2
-Title: "Digital Label Element Ontology"
-Description: "all concept/items from **Digital Label Element Ontology**"
+ValueSet: DigitalLabelOntology2VS
+Id: DigitalLabelOntology2
+Title: "Digital Label Element Property Ontology"
+Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement)"
 
-* ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement2"
+
+* ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology2"
 * ^version = "0.1.0"
 
 * ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.10" // Ersetzen Sie dies durch Ihre reale OID
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.24" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 
-* include codes from system DigitalLabelElement2
+* include codes from system DigitalLabelOntology2

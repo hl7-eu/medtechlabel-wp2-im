@@ -140,9 +140,13 @@ This list is also referred to as *digital label element library*.
     * #naturalPerson "natural person" "natural person"
       * ^designation.language = #de
       * ^designation.value = "natürliche Person"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
     * #jurisdictionalPerson "jurisdictional person" "jurisdictional person"
       * ^designation.language = #de
       * ^designation.value = "juristische Person"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
   * #animal "Animal" "animal"
     * ^designation.language = #de
     * ^designation.value = "Tier"
@@ -153,19 +157,24 @@ This list is also referred to as *digital label element library*.
     * ^designation.value = "Label"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
-    * #digitalLabel "digital Label" "label in electronic format"
+    * #electronicLabel "electronic Label" "label in electronic format"
       * ^designation.language = #de
-      * ^designation.value = "digitales Label"
+      * ^designation.value = "elektr. Label"
+      * ^property[+].code = #synonym
+      * ^property[=].valueCode = #digitalLabel
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+    * #digitalLabel "digital Label" "digital label, potentially misleading with its generic meaning"
+      * ^designation.language = #de
+      * ^designation.value = "digitales Label"
     * #printedLabel "printed Label" "label in printed format"
       * ^designation.language = #de
-      * ^designation.value = "geddrucktes Label"
+      * ^designation.value = "gedrucktes Label"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
     * #secondaryLabel "2nd Label" "any other label provided for medicinal product"
       * ^property[+].code = #dleType
-      * ^property[=].valueCode = #model
+      * ^property[=].valueCode = #abstract
   * #document "document" "any kind of a document"
     * ^designation.language = #de
     * ^designation.value = "Dokument"
@@ -198,9 +207,11 @@ This list is also referred to as *digital label element library*.
       * #disposeInformation "dispose information" "information for disposing a medical device"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
-    * #passport "passport" "any kind passport about the MD"
+    * #passport "passport" "any kind of passport, that collects or accomponies information"
       * ^property[+].code = #requirement
       * ^property[=].valueCode = #legal
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
       * #implantCard "implant card" "information about an implanted medical device"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
@@ -241,7 +252,7 @@ This list is also referred to as *digital label element library*.
         * #iso14617 "ISO 14617" "ISO 14617: Graphical symbols for diagrams"
           * ^property[+].code = #dleType
           * ^property[=].valueCode = #standard
-        * #iso14971 "ISO 14971" "ISO 14971: Medical Devices - Applicaiton of Risk Management"
+        * #iso14971 "ISO 14971" "ISO 14971: Medical Devices - Application of Risk Management"
           * ^property[+].code = #dleType
           * ^property[=].valueCode = #standard
         * #iso15223 "ISO 15223" "ISO 15223: Medical devices - Symbols to be used with information to be supplied by the manufacturer"
@@ -274,10 +285,12 @@ This list is also referred to as *digital label element library*.
     * ^designation.language = #de
     * ^designation.value = "Piktogramm"
     * ^property[+].code = #synonym
-    * ^property[=].valueCode = #symbol
+    * ^property[=].valueCode = #synonym
     * #icon "icon" "symbol or icon"
       * ^designation.language = #de
       * ^designation.value = "Icon"
+      * ^property[+].code = #synonym
+      * ^property[=].valueCode = #symbol
   * #information "information" "any kind of information about the product"
     * ^designation.language = #de
     * ^designation.value = "Information"
@@ -316,15 +329,25 @@ This list is also referred to as *digital label element library*.
   * #risk "risk" "risk when using the product"
     * ^designation.language = #de
     * ^designation.value = "Risiko"
+    * ^property[+].code = #comment
+    * ^property[=].valueString = "this branch is mentioned and belongs to the general development of MDs but is not further considered here"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #abstract
     * #generalRisk "general risk"
       * ^designation.language = #de
       * ^designation.value = "generelles Risiko"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
     * #residualRisk "residual risk" "remaining risk after mitigation"
       * ^designation.language = #de
       * ^designation.value = "Verbleibendes Risiko"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
     * #hazard "hazard"
       * ^designation.language = #de
       * ^designation.value = "Gefahr"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
       * #microbialHazard "microbial hazard"
         * #infection "infection"
           * ^designation.language = #de
@@ -359,6 +382,8 @@ This list is also referred to as *digital label element library*.
   * #criticalCharacteristic "critical characteristics"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
+    * ^property[+].code = #comment
+    * ^property[=].valueString = "belongs to properties?"
   * #environment "environment"
     * ^designation.language = #de
     * ^designation.value = "Umgebung"
@@ -377,6 +402,8 @@ This list is also referred to as *digital label element library*.
   * #role "role" "role that someone plays"
     * ^designation.language = #de
     * ^designation.value = "Rolle"
+    * ^property[+].code = #comment
+    * ^property[=].valueString = "belongs to actors branch?"
     * #roleUser "user (role)"
       * ^designation.language = #de
       * ^designation.value = "Benutzer"
@@ -633,12 +660,22 @@ This list is also referred to as *digital label element library*.
   * #unit "units" "units of measurement, eg. SI or UCUM"
     * ^designation.language = #de
     * ^designation.value = "Einheit"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #model
     * #unitSI "SI units" "SI"
       * ^designation.language = #de
       * ^designation.value = "SI-Einheit"
+      * ^property[+].code = #comment
+      * ^property[=].valueString = "handled via datatype"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
     * #unitUCUM "UCUM units" "Unified Codes for Units of Measurement (UCUM)"
       * ^designation.language = #de
       * ^designation.value = "UCUM Einheit"
+      * ^property[+].code = #comment
+      * ^property[=].valueString = "handled via datatype"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #abstract
   * #shelfLife "shelf-life" "period during which a product maintains its stability"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model

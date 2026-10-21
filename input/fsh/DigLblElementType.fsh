@@ -31,6 +31,7 @@ Description: "**Type of Digital Label Element**"
 * #datatype "data type" "data type"
 * #format "format" "formats for representing data"
 * #text "text" "special fixed strings"
+* #actor "actor" "actor in a process"
 
 //ValueSet
 

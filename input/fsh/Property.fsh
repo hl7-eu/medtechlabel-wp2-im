@@ -22,7 +22,7 @@ Description: "**Property**"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.17" // Ersetzen Sie dies durch Ihre reale OID
 
 //for defining the list of digital label elements
-* #component "component" "what are the associated components?"
+* #component "component" "what are the associated components? (to be replaced by hasComponent)"
 * #reference "reference" "interesting or relevant reference/link to more information"
 * #category "category" "category of a sign"
 * #origin "origin" "origin of material"
@@ -32,6 +32,7 @@ Description: "**Property**"
 * #roleCategory "category" "data element category"
 
 //for defining the ontology
+* #hasComponent "has component"
 * #hasValue "has value" "a specific value to use for this element"
 * #hasFormat "has format"
 * #hasDataType "has datatype"
@@ -41,7 +42,10 @@ Description: "**Property**"
 * #implies "implies"
 * #appliesTo "applies to"
 * #equivalentTo "equivalent to"
-
+* #provides "provides"
+* #defines "defines"
+* #identifies "identifies"
+* #identifiedBy "identified by"
 
 
 //ValueSet

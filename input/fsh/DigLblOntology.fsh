@@ -1,7 +1,7 @@
 Instance: DigitalLabelOntology
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "DigitalLabelOntology"
+Title: "Digital Label Element ConceptMap Ontology"
 Description: "Digital Label Ontology (based on ConceptMap)"
 
 * url = "http://www.hl7europe.org/medtechlabel/ConceptMap/DigitalLabelOntology"
