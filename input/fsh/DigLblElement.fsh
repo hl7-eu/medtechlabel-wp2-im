@@ -45,7 +45,7 @@ This list is also referred to as *digital label element library*.
 * ^property[=].type = #boolean
 
 * ^property[+].code = #dleType
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#dleType"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#dleType"
 * ^property[=].description = "what is the type of this element? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -53,14 +53,14 @@ This list is also referred to as *digital label element library*.
 //* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElementType"
 
 * ^property[+].code = #requirement
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#requirement"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#requirement"
 * ^property[=].description = "from where is this item taken? (Default ISO 20417)"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #roleCategory
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#roleCategory"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#roleCategory"
 * ^property[=].description = "from where is this item taken? (Default ISO 20417)"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -77,7 +77,7 @@ This list is also referred to as *digital label element library*.
     * ^designation.value = "physisch existierendes Objekt"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #abstract
-    * #product "product" 
+    * #product "product" "product"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
       * ^property[+].code = #roleCategory
@@ -127,9 +127,9 @@ This list is also referred to as *digital label element library*.
       * ^designation.value = "Paket"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-  * #organization "organisation" "any kind of an organization being involved"
+  * #organization "organization" "any kind of an organization being involved"
     * ^designation.language = #de
-    * ^designation.value = "Organisation"
+    * ^designation.value = "Organization"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
   * #person "Person" "person"
@@ -398,7 +398,7 @@ This list is also referred to as *digital label element library*.
     * #applicablePolicy "applicable policy"
       * ^designation.language = #de
       * ^designation.value = "anwendbare Policy"
-  * #authority "authority" "any kind of an authority; could be an organisation or person"
+  * #authority "authority" "any kind of an authority; could be an organization or person"
   * #role "role" "role that someone plays"
     * ^designation.language = #de
     * ^designation.value = "Rolle"
@@ -485,7 +485,7 @@ This list is also referred to as *digital label element library*.
     * #url "url" "URL or webaddress"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-  * #name "name" "name of something, eg. person, organisation, product"
+  * #name "name" "name of something, eg. person, organization, product"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
     * #personName "person name" "name of a person"
@@ -1762,8 +1762,8 @@ This list is also referred to as *digital label element library*.
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
   * ^property[+].code = #comment
-  * ^property[=].valueString = "is this hierarchy needed? Actors - as organisations - are already added"
-  * #manufacturer "manufacturer" "organisation that produces the product"
+  * ^property[=].valueString = "is this hierarchy needed? Actors - as organizations - are already added"
+  * #manufacturer "manufacturer" "organization that produces the product"
     * ^designation.language = #de
     * ^designation.value = "Hersteller"
     * ^property[+].code = #comment
@@ -1848,12 +1848,12 @@ This list is also referred to as *digital label element library*.
     * ^property[=].valueCode = #name
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
-  * #conformityAssessmentOrg "organisation performing the conformity assessment"
+  * #conformityAssessmentOrg "organization performing the conformity assessment"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #organization
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
-  * #conformityAssessmentOrgID "ID of organisation performing the conformity assessment"
+  * #conformityAssessmentOrgID "ID of organization performing the conformity assessment"
     * ^property[+].code = #parent
     * ^property[=].valueCode = #identifier
     * ^property[+].code = #requirement
@@ -1886,6 +1886,16 @@ This list is also referred to as *digital label element library*.
       * ^property[=].valueCode = #legal
 
 
+// ======================= SUPPLEMENTAL CONCEPTS ==========================================
+  
+* #supplemental "supplemental concepts" "following a list of items that are defined here to eleminate reference errors but sohuld not be used for definitions"
+  * ^property[+].code = #inactive
+  * ^property[=].valueBoolean = true
+  * #use "use" "use"
+  * #dleType "dleType" "dleType"
+  * #model "model" "model"
+  * #legal "legal" "legal"
+  * #synonym "synonym" "synonym"
 	
 //ValueSet
 

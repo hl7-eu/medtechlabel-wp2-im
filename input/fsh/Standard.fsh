@@ -15,14 +15,14 @@ Description: "**Standards** or any other kind of basic documentation like specif
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.15" // Ersetzen Sie dies durch Ihre reale OID
 
 * ^property[+].code = #origin
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#origin"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#origin"
 * ^property[=].description = "what is the associated component to this element?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #reference
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#reference"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#reference"
 * ^property[=].description = "where can I find information about this standard?"
 * ^property[=].type = #string
 

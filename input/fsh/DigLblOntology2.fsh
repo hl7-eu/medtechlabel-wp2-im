@@ -3,6 +3,7 @@ Id: DigitalLabelOntology2
 Title: "Digital Label Element Property Ontology"
 Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement)"
 
+* ^language = #en
 * ^version = "0.1.0"
 * ^status = #active
 * ^experimental = true
@@ -10,41 +11,41 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^content = #supplement
 * ^supplements = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElement"
 
-//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology2
+//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology"
  
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.24" // Ersetzen Sie dies durch Ihre reale OID
 
 * ^property[+].code = #hasComponent
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasComponent"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasComponent"
 * ^property[=].description = "what is the associated component to this element? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #mentions
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#mentions"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#mentions"
 * ^property[=].description = "Where is this information item mentioned?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #defines
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#defines"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#defines"
 * ^property[=].description = "What does this information item define?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #identifiedBy
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#identifiedBy"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#identifiedBy"
 * ^property[=].description = "How is this element identified?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #relatedTo
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#relatedTo"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#relatedTo"
 * ^property[=].description = "to which element is this item related? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -60,56 +61,62 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #hasValue
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasValue"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasValue"
 * ^property[=].description = "what is the specific value to use? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #hasFormat
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasFormat"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasFormat"
 * ^property[=].description = "what is the specific value to use? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #hasDataType
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#hasDataType"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasDataType"
 * ^property[=].description = "what is the specific value to use? This helps to create the information model."
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
+* ^property[+].code = #hasText
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasText"
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
 * ^property[+].code = #implies
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#implies"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#implies"
 * ^property[=].description = "what other element is implied by this one?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #appliesTo
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#appliesTo"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#appliesTo"
 * ^property[=].description = "which other element does this one apply to?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #equivalentTo
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#equivalentTo"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#equivalentTo"
 * ^property[=].description = "which other element is this one equivalent to?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #identifies
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#identifies"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#identifies"
 * ^property[=].description = "which other element does this one identify?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #is-a
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#is-a"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#is-a"
 * ^property[=].description = "what is another parent element?"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -117,7 +124,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 
 
 //
-* #organization "organisation" "any kind of an organization being involved"
+* #organization "organization" "any kind of an organization being involved"
   * ^property[+].code = #hasComponent
   * ^property[=].valueCode = #organizationName
   * ^property[+].code = #hasComponent
@@ -203,7 +210,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[=].valueCode = #satisfaction
 
 
-* #fax
+* #fax "fax" "telefax"
   * ^property[+].code = #hasDataType
   * ^property[=].valueCode = #string
 
@@ -1528,13 +1535,15 @@ Id: DigitalLabelOntology2
 Title: "Digital Label Element Property Ontology"
 Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement)"
 
-
 * ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology2"
 * ^version = "0.1.0"
+
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelOntology2"
 
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.24" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 
-* include codes from system DigitalLabelOntology2
+* include codes from system DigitalLabelElement

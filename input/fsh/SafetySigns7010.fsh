@@ -15,14 +15,14 @@ Description: "**ISO 7010** - Safety colours and safety signs"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.12" // Ersetzen Sie dies durch Ihre reale OID
 
 * ^property[+].code = #origin
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#origin"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#origin"
 * ^property[=].description = "what is the associated component to this element?"
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 * ^property[=].type = #code
 
 * ^property[+].code = #category
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#category"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#category"
 * ^property[=].description = "what is the category of this sign?"
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/SafetySign7010Category"

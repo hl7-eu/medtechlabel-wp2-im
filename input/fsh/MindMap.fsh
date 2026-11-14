@@ -65,7 +65,7 @@ is therefore just a serialization of the [mindmap](model.html).
   * ifu 0..1 string "instructions for using the device"
   * manual 0..1 string "manual for handling the device"
   * technicalDescription 0..1 string "technical description about the device"
-  * website 0..1 string "website with information about the device"
+  * website 0..1 BackboneElement "website with information about the device"
     * websiteUrl 0..1 string "url for the website"
 * symbol 0..* BackboneElement "symbols for using the device"
   * icon 0..1 string "icons to symbolize warnings/errors an other information"

@@ -14,14 +14,14 @@ Description: "**ISO 7000** - Graphical Symbols for use on Equipment"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.8" // Ersetzen Sie dies durch Ihre reale OID
 
 //* ^property[+].code = #origin
-//* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#origin"
+//* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#origin"
 //* ^property[=].description = "what is the associated component to this element?"
 //* ^property[=].type = #code
 //* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 //* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #chapter
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/Property#chapter"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#chapter"
 * ^property[=].description = "what is the associated component to this element?"
 * ^property[=].type = #string
 //* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
