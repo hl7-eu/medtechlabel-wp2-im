@@ -4,6 +4,8 @@ Title: "Digital Label Element"
 Description: """
 All possible **digital label elements** are listed in this codesystem
 in form of a taxonomy to help aligning it with.
+(There is no explicit relationship introduced by the hierarchy.
+The hierarchy is used for a logical grouping to help with understanding and organizing the elements.)
 This list is also referred to as *digital label element library*.
 """
 
@@ -13,7 +15,7 @@ This list is also referred to as *digital label element library*.
 * ^caseSensitive = true
 * ^compositional = false
 * ^content = #complete
-* ^hierarchyMeaning = #is-a
+* ^hierarchyMeaning = #grouped-by
 * ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
  
 * ^identifier.system = "urn:ietf:rfc:3986"
@@ -22,11 +24,6 @@ This list is also referred to as *digital label element library*.
 * ^property[+].code = #status
 * ^property[=].uri = "http://hl7.org/fhir/concept-properties#status"
 * ^property[=].description = "Status"
-* ^property[=].type = #code
-
-* ^property[+].code = #parent
-* ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
-* ^property[=].description = "Who is the parent element of this concept? Multiple parents are possible."
 * ^property[=].type = #code
 
 * ^property[+].code = #synonym
@@ -50,7 +47,6 @@ This list is also referred to as *digital label element library*.
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElementType"
-//* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElementType"
 
 * ^property[+].code = #requirement
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#requirement"
@@ -61,7 +57,7 @@ This list is also referred to as *digital label element library*.
 
 * ^property[+].code = #roleCategory
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#roleCategory"
-* ^property[=].description = "from where is this item taken? (Default ISO 20417)"
+* ^property[=].description = "category of the role within legal reuquirements"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/ElementRoleCategory"
@@ -72,36 +68,32 @@ This list is also referred to as *digital label element library*.
 * #object "any kind of object" "basic information objects for our model; these must be represented in the information model as classes"
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
+  //* ^designation.language = #de
+  //* ^designation.value = "Objekt"
   * #physicalObject "physical Object" "an object that physically exists"
-    * ^designation.language = #de
-    * ^designation.value = "physisch existierendes Objekt"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #abstract
+    //* ^designation.language = #de
+    //* ^designation.value = "physisch existierendes Objekt"
     * #product "product" "product"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
       * ^property[+].code = #roleCategory
       * ^property[=].valueCode = #C
+      //* ^designation.language = #de
+      //* ^designation.value = "Produkt"
       * #medicalDevice "medical device" "instrument, apparatus, implement, machine, appliance, implant, reagent for in vitro use, software, material or other similar or related article, intended by the manufacturer to be used, alone or in combination, for patients (3.29), for one or more of the specific medical purpose(s)"
-        * ^designation.language = #de
-        * ^designation.value = "med. Gerät"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
       * #sparePart "spart part" "spare part replacing whole or part of the original medical device"
-        * ^designation.language = #de
-        * ^designation.value = "Ersatzteil"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
         * #battery "battery" "battery providing electrical power to a medical device"
-          * ^designation.language = #de
-          * ^designation.value = "Batterie"
           * ^property[+].code = #dleType
           * ^property[=].valueCode = #model
           * ^property[+].code = #comment
           * ^property[=].valueString = "is also a (detachable) component"
       * #component "component" "component of the medical device"
-        * ^designation.language = #de
-        * ^designation.value = "Komponente"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
         * #detachableComponent "detachable component" "detachable component of the medical device"
@@ -162,6 +154,8 @@ This list is also referred to as *digital label element library*.
       * ^designation.value = "elektr. Label"
       * ^property[+].code = #synonym
       * ^property[=].valueCode = #digitalLabel
+      * ^property[+].code = #comment
+      * ^property[=].valueString = "in which way or those synonyms? Clarify!"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
     * #digitalLabel "digital Label" "digital label, potentially misleading with its generic meaning"
@@ -1379,24 +1373,24 @@ This list is also referred to as *digital label element library*.
       * ^property[=].valueCode = #codesystem
       * ^property[+].code = #requirement
       * ^property[=].valueCode = #legal
-  * #origin "origin"
+  * #origin "origin" "origin"
     * ^designation.language = #de
     * ^designation.value = "Ursprung"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #codesystem
-    * #biologicalOrigin "biological origin"
+    * #biologicalOrigin "biological origin" "material has biological origin"
       * ^designation.language = #de
       * ^designation.value = "biolog. Ursprung"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #code
-      * #humanOrigin "human origin"
+      * #humanOrigin "human origin" "the material has a human origin"
         * ^designation.language = #de
         * ^designation.value = "menschl. Ursprung"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #code
         * ^property[+].code = #requirement
         * ^property[=].valueCode = #legal
-      * #animalOrigin "animal origin"
+      * #animalOrigin "animal origin" "the material comes from an animal"
         * ^designation.language = #de
         * ^designation.value = "tier. Ursprung"
         * ^property[+].code = #dleType
@@ -1770,29 +1764,21 @@ This list is also referred to as *digital label element library*.
     * ^property[=].valueString = "needs assignment to a role?"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #actor
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
   * #distributor "distributor" "who distributes the product?"
     * ^designation.language = #de
     * ^designation.value = "Distributeur"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #actor
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
   * #importer "importer" "organization who imports a product that was manufactured in one locale into another locale for the purposes of marketing"
     * ^designation.language = #de
     * ^designation.value = "Importeur"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #actor
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
   * #packagingProducer "packaging producer"
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #actor
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
 
   
 // ======================= PRECOORDINATED CONCEPTS ==========================================
@@ -1801,61 +1787,31 @@ This list is also referred to as *digital label element library*.
   * ^property[+].code = #inactive
   * ^property[=].valueBoolean = true
   * #manufacturerInformation "manufacturer information" "information provided by manufacturer"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #information
   * #manufacturerAddress "manufacturer address" "address of manufacturer"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #address
   * #electronicInstruction "electronic instruction"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #instruction
   * #electronicInterface "electronic interface"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #interface
   * #edocumentation "e-documentation" "form of electronically accessible information supplied by the manufacturer"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #document
   * #authorityHavingJurisdiction "authority having jurisdiction" "governmental agency or office assigned to oversee the regulation of a regulated product within a country, jurisdiction or assigned territory"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #authority
   * #authorizedRepresentative "authorized representative" "organization established within a country or jurisdiction who has received a written mandate from the manufacturer to act on their behalf for specified tasks regarding the latter’s obligations under that country or jurisdiction’s legislation"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #jurisdictionalPerson
   * #countryOfOrigin "country of origin"
     * ^designation.language = #de
     * ^designation.value = "Ursprungsland"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #country
   * #labelModelNumber "model number on label" "model number on a label"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #modelNumber
   * #hybridLabel "hybrid Label" "label in printed and digital format"
     * ^designation.language = #de
     * ^designation.value = "hybrides Label"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #printedLabel
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #digitalLabel
   * #registeredPlaceOfBusiness "registered place of business" "what is the manufacturer registered address"
     * ^designation.language = #de
     * ^designation.value = "registrierte Geschäftsadresse"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #address
     * ^property[+].code = #origin
     * ^property[=].valueCode = #requirement
   * #assemblerName "name of assembler" "name of person that assembles the device"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #name
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
   * #conformityAssessmentOrg "organization performing the conformity assessment"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
   * #conformityAssessmentOrgID "ID of organization performing the conformity assessment"
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #identifier
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
   * #humanBlood "human blood" 
@@ -1876,8 +1832,6 @@ This list is also referred to as *digital label element library*.
   * #eudamed "European Database on Medical Devices (EUDAMED)"
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
-    * ^property[+].code = #parent
-    * ^property[=].valueCode = #organization
   * #AIsystem "AI system" 
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal

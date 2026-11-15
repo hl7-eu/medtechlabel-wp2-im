@@ -42,6 +42,8 @@ Description: "**OID**s used in this IG"
 * #1.2.3.4.5.6.7.8.9.22 "type of digital label element"  "??"
 * #1.2.3.4.5.6.7.8.9.23 "element category"  "??"
 * #1.2.3.4.5.6.7.8.9.24 "element 2 ontology"  "??"
+* #1.2.3.4.5.6.7.8.9.25 "translation" "translations for label elements"
+* #1.2.3.4.5.6.7.8.9.26 "ontology" "basic ontology supplement"
 * #1.2.3.4.5.6.7.8.9.1000 "auto-assign OIDs"  "??"
 
 //Value Sets

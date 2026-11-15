@@ -1,5 +1,5 @@
-CodeSystem: DigitalLabelOntology4PropertyCS
-Id: DigitalLabelOntology4Property
+CodeSystem: DigitalLabelElementPropertyOntologyCS
+Id: DigitalLabelElementPropertyOntology
 Title: "Digital Label Element Ontology for Properties"
 Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement) for the different properties"
 
@@ -11,7 +11,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^content = #supplement
 * ^supplements = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElement"
 
-//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology4Property"
+//* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElementPropertyOntology"
 
 * ^property[+].code = #useProcedure
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#useProcedure"
@@ -22,6 +22,13 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 
 * ^property[+].code = #codesystem
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#codesystem"
+* ^property[=].description = "codesystem"
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
+* ^property[+].code = #hasSymbol
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#haSymbol"
 * ^property[=].description = "codesystem"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -59,16 +66,16 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 
 //ValueSet
 
-ValueSet: DigitalLabelOntology4PropertyVS
-Id: DigitalLabelOntology4Property
+ValueSet: DigitalLabelElementPropertyOntologyVS
+Id: DigitalLabelElementPropertyOntology
 Title: "Digital Label Element Ontology for Properties"
-Description: "Ontology that supplements the **Digital Label Elements** (based on Supplement) for the different properties"
+Description: "Ontology for **properties** that supplements the **Digital Label Elements** (based on Supplement)"
 
-* ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelOntology4Property"
+* ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElementPropertyOntology"
 * ^version = "0.1.0"
 
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelOntology4Property"
+* ^extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElementPropertyOntology"
 
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.24" // Ersetzen Sie dies durch Ihre reale OID

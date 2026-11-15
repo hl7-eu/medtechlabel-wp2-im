@@ -6,11 +6,11 @@
 id: medtechlabel
 canonical: http://www.hl7europe.org/medtechlabel
 name: MedTechLabel
-title: MedTechLabel WP2 T2.2 Information Model Guide
+title: MedTechLabel WP2 T2.2 Information Model
 description: WP2 T2.2 Information Model for Device Labeling (D2.2, M13)
 status: draft # draft | active | retired | unknown
-version: 0.4.16
-date: 2026-11-14
+version: 0.5.0
+date: 2026-11-15
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build
@@ -198,19 +198,27 @@ groups:
     - StructureDefinition/MindMap
   GroupB:
     name: Library
-    description: The Library of Digital Label Elements
+    description: The Library of Digital Label Elements is mainly a big table listing all items that occur somewhere in legal requirements or standards.
     resources:
     - CodeSystem/DigitalLabelElement
   GroupC:
     name: First Ontology Approaches
-    description: Two distinct approaches to specify an ontology for digital label elements.
+    description: Defining an ontology is based on providing supplements to the digital label element library that relates the different items with each other.
     resources:
-    - ConceptMap/DigitalLabelOntology
-    - CodeSystem/DigitalLabelOntology2
-#    - StructureMap/DigitalLabelOntology2
+    - CodeSystem/DigitalLabelElementOntology
+    - CodeSystem/DigitalLabelElementPropertyOntology
+    - CodeSystem/DigitalLabelElementTranslation
   GroupD:
+    name: standards
+    description: List of standards with a relationship to digital labels.
+    resources:
+    - CodeSystem/Symbols7000
+    - CodeSystem/SafetySigns7010
+    - CodeSystem/Symbols14617
+    - CodeSystem/Symbols15223
+  GroupE:
     name: Mappings
-    description: Mapping of digital label elements to other concepts
+    description: Some items from the library can be mapped to concepts of special codesystems.
     resources:
     - ConceptMap/DLE2ISO7000
     - ConceptMap/DLE2ISO7010

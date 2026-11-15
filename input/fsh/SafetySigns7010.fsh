@@ -21,8 +21,8 @@ Description: "**ISO 7010** - Safety colours and safety signs"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 * ^property[=].type = #code
 
-* ^property[+].code = #category
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#category"
+* ^property[+].code = #signCategory
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#signCategory"
 * ^property[=].description = "what is the category of this sign?"
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/SafetySign7010Category"
@@ -31,28 +31,28 @@ Description: "**ISO 7010** - Safety colours and safety signs"
 * #M001 "Mandatory Action" "General mandatory action sign"
   * ^designation.language = #de
   * ^designation.value = "Allgemeines Gebotszeichen"
-  * ^property[+].code = #category
+  * ^property[+].code = #signCategory
   * ^property[=].valueCode = #M
   * ^property[+].code = #origin
   * ^property[=].valueCode = #symbolIso7010-M001
 * #M002 "Mandatory Manual" "Refer to instruction manual/booklet"
   * ^designation.language = #de
   * ^designation.value = "Gebrauchsanweisung beachten"
-  * ^property[+].code = #category
+  * ^property[+].code = #signCategory
   * ^property[=].valueCode = #M
   * ^property[+].code = #origin
   * ^property[=].valueCode = #symbolIso7010-M002
 * #P001 "Prohibition" "General Prohibition"
   * ^designation.language = #de
   * ^designation.value = "Allgemeines Verbotszeichen"
-  * ^property[+].code = #category
+  * ^property[+].code = #signCategory
   * ^property[=].valueCode = #P
   * ^property[+].code = #origin
   * ^property[=].valueCode = #symbolIso7010-P001
 * #W001 "Warning" "General Warning"
   * ^designation.language = #de
   * ^designation.value = "Allgemeines Warnzeichen"
-  * ^property[+].code = #category
+  * ^property[+].code = #signCategory
   * ^property[=].valueCode = #W
   * ^property[+].code = #origin
   * ^property[=].valueCode = #symbolIso7010-W001

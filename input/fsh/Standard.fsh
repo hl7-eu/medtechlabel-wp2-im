@@ -3,6 +3,7 @@ Id: Standard
 Title: "Standard"
 Description: "**Standards** or any other kind of basic documentation like specifications that are used or referenced here"
 
+* ^language = #en
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = true
@@ -33,7 +34,7 @@ Description: "**Standards** or any other kind of basic documentation like specif
 * #iso3166 "ISO 3166" "ISO 3166: country codes"
   * ^property[+].code = #origin
   * ^property[=].valueCode = #iso3166
-* #iso20417 "ISO 20417" "ISO 20417:2026"
+* #iso20417 "ISO 20417" "ISO 20417: Medical devices — Information to be supplied by the manufacturer"
   * ^property[+].code = #origin
   * ^property[=].valueCode = #iso20417
 * #iso14617 "ISO 14617" "ISO 14617: Graphical symbols for diagrams"
@@ -59,6 +60,8 @@ Description: "**Standards** or any other kind of basic documentation like specif
 * #iec60417 "IEC 60417" "IEC 60417: Medical devices — Graphical Symbols for use on Equipment (database)"
   * ^property[+].code = #origin
   * ^property[=].valueCode = #iec60417
-* #iec60878 "IEC/TR 60878:2015" "IEC/TR 60878:2015"
+* #iec60878 "IEC/TR 60878:2015" "IEC/TR 60878: Graphical symbols for electrical equipment in medical practice"
   * ^property[+].code = #origin
   * ^property[=].valueCode = #iec60878
+  * ^property[+].code = #reference
+  * ^property[=].valueString = "https://www.vde-verlag.de/p/normen/iec-tr-60878-2022-cor1-2023/251584-EN-PDF"

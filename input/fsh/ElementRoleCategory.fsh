@@ -3,6 +3,7 @@ Id: ElementRoleCategory
 Title: "Data Element Role Category"
 Description: "Category to classify the data elements"
 
+* ^language = #en
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = true
@@ -20,3 +21,22 @@ Description: "Category to classify the data elements"
 * #E "evidence" "Supporting evidence: references to evidence supporting the information, such as validation or risk-assessment records."
 * #G "ground" "Source and review metadata: where the finding came from, how it was interpreted and what review decisions have been made."
 
+
+
+
+//ValueSet
+
+ValueSet: ElementRoleCategoryVS
+Id: ElementRoleCategory
+Title: "Element Role Category"
+Description: "**Role Category** for Data Element Library"
+
+* ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/ElementRoleCategory"
+* ^version = "4.0.0"
+
+//* ^identifier.system = "urn:ietf:rfc:3986"
+//* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.17" // Ersetzen Sie dies durch Ihre reale OID
+
+* insert HeaderDetailRules
+
+* include codes from system ElementRoleCategory

@@ -16,6 +16,8 @@ Description: "**ISO 7010** - Safety categories"
 
 
 * #M "Mandatory"  "mandatory actions"
+  * ^designation.language = #de
+  * ^designation.value = "verpflichtende Aktion"
 * #P "Prohibited" "prohibited actions"
   * ^designation.language = #de
   * ^designation.value = "Verbot"
@@ -23,10 +25,14 @@ Description: "**ISO 7010** - Safety categories"
   * ^designation.language = #de
   * ^designation.value = "Warnung"
 * #F "Fire" "fire protection"
+  * ^designation.language = #de
+  * ^designation.value = "Feuer"
 * #E "Emergency" "emergency"
   * ^designation.language = #de
   * ^designation.value = "Notfall"
 * #- "Supplementary" "supplementary sign"
+  * ^designation.language = #de
+  * ^designation.value = "zusätzliches Zeichen"
 
 
 //ValueSet

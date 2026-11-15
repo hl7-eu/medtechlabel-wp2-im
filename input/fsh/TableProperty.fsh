@@ -10,7 +10,7 @@ Description: "**Property** for Element Library"
 
 * insert HeaderDetailRules
 
-* ^language = #de-DE
+* ^language = #en
 * ^caseSensitive = true
 * ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/TableProperty"
 * ^hierarchyMeaning = #is-a
@@ -24,13 +24,10 @@ Description: "**Property** for Element Library"
 //for defining the list of digital label elements
 * #basic "basic property" "property that is used for specifying the data element library"
   * #component "component" "what are the associated components? (to be replaced by hasComponent)"
-  * #reference "reference" "interesting or relevant reference/link to more information"
-  * #category "category" "category of a sign"
-  * #origin "origin" "origin of material"
   * #dleType "DLE type" "what is the type of this item, i.e. is it relevant for information modelling?"
   * #chapter "chapter" "chapter where defined in standard"
   * #requirement "legal or standard" "where is the origin of this element? (Default is ISO 20417.)"
-  * #roleCategory "category" "data element category"
+  * #roleCategory "role category" "data element category"
 
 //for defining the general ontology
 * #ontology "ontology" "property to be used for defining the ontology"
@@ -41,7 +38,6 @@ Description: "**Property** for Element Library"
   * #hasDataType "has datatype" "the element uses a specific data type"
   * #relatedTo "related to" "related to another concept, w/o specifying how"
   * #mentions "mentions" "the element mentions another element"
-  * #is-a "is-a" "the element is also a specialization of another element"
   * #implies "implies" "this element implies something else"
   * #appliesTo "applies to" "this element also applies to another element"
   * #equivalentTo "equivalent to" "this element is equivalent to another element"
@@ -51,8 +47,16 @@ Description: "**Property** for Element Library"
   * #identifiedBy "identified by" "this element can be identified by another element"
 
 //for defining the ontology for properties
+* #other "other properties" "some more properties"
   * #useProcedure "use procedure" "use a specific procedure for a property"
   * #codesystem "codesystem" "special codesystem associated with this property"
+
+//other
+  * #signCategory "sign category" "category of a sign"
+  * #reference "reference" "interesting or relevant reference/link to more information"
+  * #origin "origin" "origin of material"
+
+
 
 //ValueSet
 
