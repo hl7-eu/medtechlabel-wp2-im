@@ -132,13 +132,13 @@ Description: "Digital Label Element -> ISO 7000"
 * group.element[+].code = #symbolIso7000-3723
 * group.element[=].display = "3723"
 * group.element[=].target[+].code = #3723
-* group.element[=].target[=].display = "endocrine disrupting, carcinogenic, mutagenic or toxic ror reproduction substances"
+* group.element[=].target[=].display = "??"
 * group.element[=].target[=].equivalence = #equal
 
 * group.element[+].code = #symbolIso7000-6041
 * group.element[=].display = "6041"
 * group.element[=].target[+].code = #6041
-* group.element[=].target[=].display = "instructions for use"
+* group.element[=].target[=].display = "??"
 * group.element[=].target[=].equivalence = #equal
 
 * group.unmapped.mode = #provided

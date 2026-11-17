@@ -15,10 +15,10 @@ Description: "**ISO 7010** - Safety categories"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.21" // Ersetzen Sie dies durch Ihre reale OID
 
 
-* #M "Mandatory"  "mandatory actions"
+* #M "Mandatory"  "mandatory action"
   * ^designation.language = #de
   * ^designation.value = "verpflichtende Aktion"
-* #P "Prohibited" "prohibited actions"
+* #P "Prohibited" "prohibited action"
   * ^designation.language = #de
   * ^designation.value = "Verbot"
 * #W "Warning" "warning of hazards"

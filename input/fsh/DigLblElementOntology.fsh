@@ -120,6 +120,20 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
+* ^property[+].code = #constrains
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#constrains"
+* ^property[=].description = "which other element does this one constrain further?"
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
+* ^property[+].code = #provides
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#provides"
+* ^property[=].description = "what other information is provided by this element? (comment: can we replace this information by other details or relationships?)"
+* ^property[=].type = #code
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
+
 
 * #object "any kind of object" "basic information objects for our model; these must be represented in the information model as classes"
 * #physicalObject "physical Object" "an object that physically exists"
@@ -399,7 +413,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[=].valueCode = #repairing
 
   * ^property[+].code = #hasComponent
-  * ^property[=].valueCode = #transport
+  * ^property[=].valueCode = #transporting
 
   * ^property[+].code = #hasComponent
   * ^property[=].valueCode = #instructionForUse
@@ -989,7 +1003,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #familyName "family name" "family name of a person"
 * #organizationName "organization name" "name of an organization"
   * ^property[+].code = #hasDataType
-  * ^property[=].valueCode = #string
+  * ^property[=].valueCode = #DTstring
 * #productName "name of the product"
 * #tradeName "trade name" "trade name for the product"
   * ^property[+].code = #relatedTo
@@ -1027,22 +1041,12 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #country "country" "country as string or code (ISO 3166)"
   * ^property[+].code = #hasValue
   * ^property[=].valueCode = #countryCode
+  * ^property[+].code = #hasDataType
+  * ^property[=].valueCode = #DTcode
 
-  * ^property[+].code = #hasFormat
-  * ^property[=].valueCode = #code
-
-  * ^property[+].code = #hasFormat
-  * ^property[=].valueCode = #stringFormat
-  * ^property[+].code = #hasFormat
-  * ^property[=].valueCode = #string
-
-  * ^property[+].code = #hasFormat
-  * ^property[=].valueCode = #code
-
-  * ^property[+].code = #hasValue
-  * ^property[=].valueCode = #countryCode
 * #title "title" "title"
 * #description "description" "a long description"
+* #timePeriod "period of time" "period of time"
 * #expectedLifeTime "expected lifetime" "period specified by the manufacturer during which the product is expected to remain safe and effective for use"
   * ^property[+].code = #equivalentTo
   * ^property[=].valueCode = #expectedServiceTime
@@ -1061,6 +1065,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #absoluteExpectedLifeTime "absolute" "absolute expected lifetime"
 * #relativeExpectedLifeTime "relative" "relative expected lifetime"
 * #expectedServiceTime "expected service Time" "expected time this product is in service"
+* #shelfLife "shelf-life" "period during which a product maintains its stability"
 * #usageCount "usage count"
 * #usageCountByCycle "usage count by cycle (repetitions)"
 * #usageCountByTime "usage count by time (period of time^)"
@@ -1099,11 +1104,12 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #email "email" "email address"
 * #fax "fax" "telefax"
   * ^property[+].code = #hasDataType
-  * ^property[=].valueCode = #string
+  * ^property[=].valueCode = #DTstring
 * #website "website" "(url of) website"
+* #dataCarrier "data carier"
 * #language "language"
-  * ^property[+].code = #hasFormat
-  * ^property[=].valueCode = #code
+  * ^property[+].code = #hasDataType
+  * ^property[=].valueCode = #DTcode
 
   * ^property[+].code = #hasFormat
   * ^property[=].valueCode = #stringFormat
@@ -1117,22 +1123,21 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[=].valueCode = #unitSI
 * #unitSI "SI units" "SI"
 * #unitUCUM "UCUM units" "Unified Codes for Units of Measurement (UCUM)"
-* #shelfLife "shelf-life" "period during which a product maintains its stability"
 
   
 // ======================= DATA TYPES ==========================================
 
 * #dataType "data type" "data types helping to specify details of data elements"
 * #DTidentifier "identifier (DT)" "identifier (as datatype)"
-* #string "string" "any character sequence"
+* #DTstring "string" "any character sequence"
 * #DTdate "date" "a date of any precision (YYYY,MM, DD)"
-* #time "time" "time (clock)"
-* #dateTime "time" "a point in time"
-* #code "code" "coded information (code + codesystem + codesystemversion)"
-* #quantity "quantity" "physical quantity (value + unit)"
-* #length "lentgh" "length (value + unit)"
-* #volume "volume" "volume (value + unit)"
-* #portion "portion"
+* #DTtime "time" "time (clock)"
+* #DTdateTime "time" "a point in time"
+* #DTcode "code" "coded information (code + codesystem + codesystemversion)"
+* #DTquantity "quantity" "physical quantity (value + unit)"
+* #DTlength "lentgh" "length (value + unit)"
+* #DTvolume "volume" "volume (value + unit)"
+* #DTportion "portion"
 
 
 // ======================= FORMATS ==========================================
@@ -1171,6 +1176,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #repairing "repairing"
 * #packaging "packing"
 * #repackaging "re-packaging"
+* #sterilePackaging "sterile packaging" "packaing under sterile conditions"
 * #qualityControl "quality control"
 * #riskManagement "managing risks"
   * ^property[+].code = #hasComponent
@@ -1179,7 +1185,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[+].code = #hasComponent
   * ^property[=].valueCode = #hazard
 * #registering "registering" "registration of the MD in an official registry, eg the EUDAMED UDI and device registration module"
-* #transport "transport" "transporting the product"
+* #transporting "transport" "transporting the product"
 * #importing "importing"
 * #distributing "distributing"
 * #installing "installing" "installing the product"
@@ -1201,6 +1207,8 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * #nonSterile "non-sterile"
 * #sealed "sealed"
 * #clinicalInvestigationOnly "for clinical investigation only"
+  * ^property[+].code = #hasText
+  * ^property[=].valueCode = #txtExclusively4ClinicalUse
 * #inVitroDiagnosticsUse "for in-vitro diagnostics use"
 * #calibrated "calibrated"
 * #detachable "detachable" "detachable or removable"
@@ -1284,7 +1292,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[=].valueCode = #maintaining
 
   * ^property[+].code = #implies
-  * ^property[=].valueCode = #transport
+  * ^property[=].valueCode = #transporting
 
   * ^property[+].code = #implies
   * ^property[=].valueCode = #error
@@ -1358,7 +1366,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
   * ^property[=].valueCode = #sterile
 
   * ^property[+].code = #appliesTo
-  * ^property[=].valueCode = #transport
+  * ^property[=].valueCode = #transporting
 
   * ^property[+].code = #appliesTo
   * ^property[=].valueCode = #storing

@@ -45,6 +45,7 @@ Description: "**Property** for Element Library"
   * #defines "defines" "this element defines something else"
   * #identifies "identifies" "this element identifies another"
   * #identifiedBy "identified by" "this element can be identified by another element"
+  * #constrains "constrains" "is a constraint upon another element"
 
 //for defining the ontology for properties
 * #other "other properties" "some more properties"
@@ -55,6 +56,7 @@ Description: "**Property** for Element Library"
   * #signCategory "sign category" "category of a sign"
   * #reference "reference" "interesting or relevant reference/link to more information"
   * #origin "origin" "origin of material"
+  * #purpose "purpose" "what is this symbol used for?"
 
 
 

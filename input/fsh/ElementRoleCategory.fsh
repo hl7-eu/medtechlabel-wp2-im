@@ -34,8 +34,8 @@ Description: "**Role Category** for Data Element Library"
 * ^url = "http://www.hl7europe.org/medtechlabel/ValueSet/ElementRoleCategory"
 * ^version = "4.0.0"
 
-//* ^identifier.system = "urn:ietf:rfc:3986"
-//* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.17" // Ersetzen Sie dies durch Ihre reale OID
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.23" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 

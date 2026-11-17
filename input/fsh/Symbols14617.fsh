@@ -8,7 +8,7 @@ Description: "**ISO 14617** - Graphical symbols for diagrams"
 * ^experimental = true
 * ^caseSensitive = true
 * ^compositional = false
-* ^content = #complete
+* ^content = #fragment
 
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.11" // Ersetzen Sie dies durch Ihre reale OID

@@ -28,6 +28,14 @@ Description: "**ISO 7010** - Safety colours and safety signs"
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/SafetySign7010Category"
 * ^property[=].type = #code
 
+//TODO: this property code is used in a different way then with the library
+* ^property[+].code = #requirement
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#requirement"
+* ^property[=].description = "what is the associated requirement for this sign?"
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/SafetySign7010Category"
+* ^property[=].type = #string
+
 * #M001 "Mandatory Action" "General mandatory action sign"
   * ^designation.language = #de
   * ^designation.value = "Allgemeines Gebotszeichen"
@@ -35,6 +43,8 @@ Description: "**ISO 7010** - Safety colours and safety signs"
   * ^property[=].valueCode = #M
   * ^property[+].code = #origin
   * ^property[=].valueCode = #symbolIso7010-M001
+  * ^property[+].code = #requirement
+  * ^property[=].valueString = "to signify that the instruction manual/booklet must be read"
 * #M002 "Mandatory Manual" "Refer to instruction manual/booklet"
   * ^designation.language = #de
   * ^designation.value = "Gebrauchsanweisung beachten"

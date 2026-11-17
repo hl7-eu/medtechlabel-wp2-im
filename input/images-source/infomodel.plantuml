@@ -9,44 +9,44 @@ title Information Model
 'cloud "Accompanying Information" {
 
     class "Manufacturer" as manu {
-        identifier
-        name
-        address
+        identifier[]: Identifier
+        name: Name
+        address: Address
         contactInfo
     }
 
     class "(General) \nProduct \n(Information)" as product {
-        name
-        description
+        name: string
+        description: text
+        purpose: string
     }
 
     class "Catalog" as cat {
-        catalogNumber
-        catalogData
+        catalogNumber: code
+        catalogData: text
     }
 
     product "0..*" .right. "0..*" cat : listed in >
 
     abstract class "Documentation" as documentation {
-        language
+        language: code
     }
 
 
     class "Instruction \nfor Use (IFU)" as ifu {
-        text
+        text: text
     }
 
     class "electronic \nInstruction \nfor Use (eIFU)" as eifu {
-        text
-        url
+        url: URL
     }
 
     class "Manual" as manual {
-        text
+        text: text
     }
 
     class "Technical\nDescription" as td {
-        text
+        text: text
     }
 
     product o-- documentation : has >
@@ -58,9 +58,10 @@ title Information Model
 
     manual -- "0..*" icon : uses >
 
-    class "Icon" as icon {
-        symbol
-        description
+    class "Icon/Symbol" as icon {
+        image: PNG/JPG
+        description: text
+        category: code
     }
 
     ifu -- "0..*" icon : > has
@@ -69,23 +70,23 @@ title Information Model
     ifu <|-- eifu
     
     class "Website" as web {
-        url
-        content    
+        url: URL
+        content: text   
     }
 
     manu -- web : > has
     product -- web
     web -- "0..*" web : > points to
 
-    class "QR Code" as qr {
-        content
+    class "Data Carrier" as dc {
+        content: text
     }
 
     manu "1" -right- "0..*" product : > produces
 
 
 
-    qr -- "0..1" web : > points to
+    dc -- "0..1" web : > points to
 
     class "electronic label" as elabel {
 
@@ -97,32 +98,32 @@ title Information Model
 
 'cloud "Logical Object" {
     class "Product" as prod #ffa {
-        identifier[]
-        productionDate
+        identifier[]: Identifier
+        productionDate: Date
     }
 
     class "Package" as pkg  #ffa {
         packagingSize
-        content
+        content: text
     }
 
     abstract class "Label" as label #ffa {
-        description
+        description: text
     }
 
 '}
 
 documentation "1" -- "1" label : > has
 
-label -- qr : > has
+label -- dc : > has
 label -- "0..*" icon : > has
 
 label <|-- elabel
 
 class "Property" as prop {
-    identifier
-    description
-    value
+    identifier: Identifier
+    description: text
+    value: string/integer/..
 }
 
 class "Lot" as lot {
@@ -136,14 +137,14 @@ class "Lot" as lot {
     }
 
     abstract class "Device" as adev {
-        serialNumber
-        title
+        serialNumber: Identifier
+        title: string
         expiryDate: date
 
     }
 
     class "(Specific) \nDevice" as device {
-        usageCount
+        usageCount: integer
     }
 
     adev <|-- device
@@ -165,11 +166,13 @@ class "Lot" as lot {
     }
 
     class "Accessory" as acc {
-
+        serialNumber: Identifier
+        catalogNumber: code
     }
 
     class "Spare Part" as spare {
-
+        serialNumber: Identifier
+        catalogNumber: code
     }
 
     class "detachable Component" as comp {
@@ -177,11 +180,12 @@ class "Lot" as lot {
     }
 
     class "Battery" as batt {
-
+        catalogNumber: code
+        size
+        capacity
     }
 
     class "printed \nInstruction \nfor Use (pIFU)" as pifu {
-        text
     }
 
 

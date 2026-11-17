@@ -101,12 +101,12 @@ This list is also referred to as *digital label element library*.
           * ^designation.value = "abtrennbare Komponente"
           * ^property[+].code = #dleType
           * ^property[=].valueCode = #model
-      * #accessory "accessory"
+      * #accessory "accessory" "additional accompanying item to be used with the device"
         * ^designation.language = #de
         * ^designation.value = "Zubehör"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
-      * #consumableComponent "consumable component"
+      * #consumableComponent "consumable component" "item that is consumed during usage and requires refill"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
     * #container "container" "box containing the items"
@@ -192,7 +192,7 @@ This list is also referred to as *digital label element library*.
         * ^designation.value = "Installationsbeschreibung"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
-      * #quickReferenceGuide "quick reference guide"
+      * #quickReferenceGuide "quick reference guide" "a guide with a short introduction listing the most important details to know"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #model
       * #protocol "protocol" "protocol of electronic interface"
@@ -267,7 +267,7 @@ This list is also referred to as *digital label element library*.
       * #implementationGuide "IG" "implementation guide"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #abstract
-      * #productSpecification "product specification"	  
+      * #productSpecification "product specification"	"detailed specification describing the product"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #abstract
   * #purpose "purpose" "purpose of use"
@@ -337,16 +337,16 @@ This list is also referred to as *digital label element library*.
       * ^designation.value = "Verbleibendes Risiko"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
-    * #hazard "hazard"
+    * #hazard "hazard" "hazard"
       * ^designation.language = #de
       * ^designation.value = "Gefahr"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
-      * #microbialHazard "microbial hazard"
+      * #microbialHazard "microbial hazard" "microbial hazard"
         * #infection "infection"
           * ^designation.language = #de
           * ^designation.value = "Infektion"
-      * #environmentalHazard "environmental hazard"
+      * #environmentalHazard "environmental hazard" "environmental hazard"
       * #radiationHazard "radiation hazard"
       * #allergicReactionHazard "allergic reaction hazard"
       * #physicalHazard "physical hazard"
@@ -535,18 +535,24 @@ This list is also referred to as *digital label element library*.
   * #description "description" "a long description"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
-  * #expectedLifeTime "expected lifetime" "period specified by the manufacturer during which the product is expected to remain safe and effective for use"
+  * #timePeriod "period of time" "period of time"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
-    * #absoluteExpectedLifeTime "absolute" "absolute expected lifetime"
+    * #expectedLifeTime "expected lifetime" "period specified by the manufacturer during which the product is expected to remain safe and effective for use"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-    * #relativeExpectedLifeTime "relative" "relative expected lifetime"
+      * #absoluteExpectedLifeTime "absolute" "absolute expected lifetime"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #model
+      * #relativeExpectedLifeTime "relative" "relative expected lifetime"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #model
+    * #expectedServiceTime "expected service Time" "expected time this product is in service"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
-  * #expectedServiceTime "expected service Time" "expected time this product is in service"
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #model
+    * #shelfLife "shelf-life" "period during which a product maintains its stability"
+      * ^property[+].code = #dleType
+      * ^property[=].valueCode = #model
   * #usageCount "usage count"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #model
@@ -641,6 +647,9 @@ This list is also referred to as *digital label element library*.
       * ^designation.value = "Webseite"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #model
+  * #dataCarrier "data carier"
+    * ^property[+].code = #dleType
+    * ^property[=].valueCode = #model
   * #language "language"
     * ^designation.language = #de
     * ^designation.value = "Sprache"
@@ -670,10 +679,6 @@ This list is also referred to as *digital label element library*.
       * ^property[=].valueString = "handled via datatype"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #abstract
-  * #shelfLife "shelf-life" "period during which a product maintains its stability"
-    * ^property[+].code = #dleType
-    * ^property[=].valueCode = #model
-
   
 // ======================= DATA TYPES ==========================================
 
@@ -685,31 +690,31 @@ This list is also referred to as *digital label element library*.
   * #DTidentifier "identifier (DT)" "identifier (as datatype)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #string "string" "any character sequence"
+  * #DTstring "string" "any character sequence"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
   * #DTdate "date" "a date of any precision (YYYY,MM, DD)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #time "time" "time (clock)"
+  * #DTtime "time" "time (clock)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #dateTime "time" "a point in time"
+  * #DTdateTime "time" "a point in time"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #code "code" "coded information (code + codesystem + codesystemversion)"
+  * #DTcode "code" "coded information (code + codesystem + codesystemversion)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-  * #quantity "quantity" "physical quantity (value + unit)"
+  * #DTquantity "quantity" "physical quantity (value + unit)"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
-    * #length "lentgh" "length (value + unit)"
+    * #DTlength "lentgh" "length (value + unit)"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #datatype
-    * #volume "volume" "volume (value + unit)"
+    * #DTvolume "volume" "volume (value + unit)"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #datatype
-  * #portion "portion"
+  * #DTportion "portion"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #datatype
 
@@ -801,6 +806,11 @@ This list is also referred to as *digital label element library*.
       * #repackaging "re-packaging"
         * ^property[+].code = #dleType
         * ^property[=].valueCode = #procedure
+      * #sterilePackaging "sterile packaging" "packaing under sterile conditions"
+        * ^property[+].code = #dleType
+        * ^property[=].valueCode = #procedure
+        * ^property[+].code = #requirement
+        * ^property[=].valueCode = #symbolIso7000
     * #qualityControl "quality control"
       * ^property[+].code = #dleType
       * ^property[=].valueCode = #procedure
@@ -812,7 +822,7 @@ This list is also referred to as *digital label element library*.
       * ^property[=].valueCode = #procedure
       * ^property[+].code = #requirement
       * ^property[=].valueCode = #legal
-  * #transport "transport" "transporting the product"
+  * #transporting "transport" "transporting the product"
     * ^property[+].code = #dleType
     * ^property[=].valueCode = #procedure
     * #importing "importing"
@@ -888,8 +898,6 @@ This list is also referred to as *digital label element library*.
     * ^property[=].valueCode = #property
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
-    * ^property[+].code = #hasText
-    * ^property[=].valueCode = #txtExclusively4ClinicalUse
     * ^designation.language = #de
     * ^designation.value = "nur für klinische Untersuchungen"
   * #inVitroDiagnosticsUse "for in-vitro diagnostics use"
@@ -1803,8 +1811,8 @@ This list is also referred to as *digital label element library*.
   * #registeredPlaceOfBusiness "registered place of business" "what is the manufacturer registered address"
     * ^designation.language = #de
     * ^designation.value = "registrierte Geschäftsadresse"
-    * ^property[+].code = #origin
-    * ^property[=].valueCode = #requirement
+    * ^property[+].code = #requirement
+    * ^property[=].valueCode = #legal
   * #assemblerName "name of assembler" "name of person that assembles the device"
     * ^property[+].code = #requirement
     * ^property[=].valueCode = #legal
@@ -1901,7 +1909,7 @@ Description: "**Digital Label Element** items needed as **codes**"
 
 * insert HeaderDetailRules
 
-* include codes from system DigitalLabelElement where dleType = "code"
+* include codes from system DigitalLabelElement where dleType = "DTcode"
 
 
 

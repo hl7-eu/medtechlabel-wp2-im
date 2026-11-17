@@ -13,6 +13,10 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 
 //* ^valueSet = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElementPropertyOntology"
 
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.27" // Ersetzen Sie dies durch Ihre reale OID
+
+
 * ^property[+].code = #useProcedure
 * ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#useProcedure"
 * ^property[=].description = "what is the associated procedure for this property"
@@ -28,7 +32,7 @@ Description: "Ontology that supplements the **Digital Label Elements** (based on
 * ^property[=].extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/ValueSet/DigitalLabelElement"
 
 * ^property[+].code = #hasSymbol
-* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#haSymbol"
+* ^property[=].uri = "http://www.hl7europe.org/medtechlabel/CodeSystem/TableProperty#hasSymbol"
 * ^property[=].description = "codesystem"
 * ^property[=].type = #code
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -77,8 +81,8 @@ Description: "Ontology for **properties** that supplements the **Digital Label E
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
 * ^extension[=].valueCanonical = "http://www.hl7europe.org/medtechlabel/CodeSystem/DigitalLabelElementPropertyOntology"
 
-//* ^identifier.system = "urn:ietf:rfc:3986"
-//* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.24" // Ersetzen Sie dies durch Ihre reale OID
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.27" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 

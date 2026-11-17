@@ -8,12 +8,19 @@ Description: "**ISO 15223** - Medical devices — Symbols to be used with inform
 * ^experimental = true
 * ^caseSensitive = true
 * ^compositional = false
-* ^content = #complete
+* ^content = #fragment
+
+* ^property[+].code = #comment
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#comment"
+* ^property[=].description = "Comment"
+* ^property[=].type = #string
 
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.18" // Ersetzen Sie dies durch Ihre reale OID
 
-* #5.4.3 "consult instructions for use" "for use"
+* #5.4.3 "consult instructions for use" "consult instructions for use or consult electronic instructions for use"
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "indicates the need for the user to consult the instructions for use"
 * #5.1.8 "importer" "importer"
 * #5.1.9 "distributor" "distributor"
 * #5.7.9 "repackaging" "repackaging"

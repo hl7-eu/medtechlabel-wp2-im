@@ -9,8 +9,8 @@ name: MedTechLabel
 title: MedTechLabel WP2 T2.2 Information Model
 description: WP2 T2.2 Information Model for Device Labeling (D2.2, M13)
 status: draft # draft | active | retired | unknown
-version: 0.5.0
-date: 2026-11-15
+version: 0.5.1
+date: 2026-11-17
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build
@@ -209,7 +209,7 @@ groups:
     - CodeSystem/DigitalLabelElementPropertyOntology
     - CodeSystem/DigitalLabelElementTranslation
   GroupD:
-    name: standards
+    name: (ISO) Standards
     description: List of standards with a relationship to digital labels.
     resources:
     - CodeSystem/Symbols7000
